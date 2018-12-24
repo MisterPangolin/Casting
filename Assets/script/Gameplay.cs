@@ -27,7 +27,7 @@ public class Gameplay : MonoBehaviour {
 
     
 
-    public void Awake()
+    private void Awake()
     {
     }
 }
