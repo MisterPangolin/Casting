@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 /// <summary>
@@ -11,21 +12,22 @@ public class Points : MonoBehaviour {
     /// <summary>
     /// Entier enregistrant le score
     /// </summary>
-    public int score = 0;
+    private int score = 0;
 
     /// <summary>
     /// séparation en dizaines et unités, pour permettres d'afficher les 
     /// </summary>
     private int dizaines = 0;
-
-    /// <summary>
+    public Text TDizaine;
     /// séparation en dizaines et unités, pour permettres d'afficher les 
     /// </summary>
     private int unité = 0;
+    public Text TUnité;
 
-    private void Awake()
+    private void Update()
     {
-        MajScore();   
+        MajScore();
+        MajAffichageScore();
     }
 
     /// <summary>
@@ -35,5 +37,30 @@ public class Points : MonoBehaviour {
     {
         unité = score % 10;
         dizaines = score / 10;
+    }
+
+    /// <summary>
+    /// met à jour l'affichage du texte du score
+    /// </summary>
+    private void MajAffichageScore()
+    {
+        TDizaine.text = dizaines.ToString();
+        TUnité.text = unité.ToString();
+    }
+
+    /// <summary>
+    /// augmente le score d'un point
+    /// </summary>
+    public void UpScore()
+    {
+        score += 1;
+    }
+
+    /// <summary>
+    /// Diminue le score d'un point
+    /// </summary>
+    public void DownScore()
+    {
+        score -= 1;
     }
 }
