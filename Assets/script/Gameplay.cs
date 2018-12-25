@@ -53,6 +53,13 @@ public class Gameplay : MonoBehaviour {
     public Image BordB;
 
     /// <summary>
+    /// Booléén servant à se souvenir de qui à la main à l'instant T
+    /// Vraie : Main à l'éaquipe B
+    /// Faux : Main à l'équpe R
+    /// </summary>
+    private bool MainEquipeBleue;
+
+    /// <summary>
     /// liste des canevas de chaques phases
     /// </summary>
     public GameObject[] Phases;
@@ -156,11 +163,13 @@ public class Gameplay : MonoBehaviour {
             {
                 AfficherBord(BordB);
                 RetirerBord(BordR);
+                MainEquipeBleue = true;
             }
             if (Input.GetKeyDown(KeyCode.N) && Input.GetKey(KeyCode.M))
             {
                 AfficherBord(BordR);
                 RetirerBord(BordB);
+                MainEquipeBleue = false;
             }
             if(Phase == 2)
             {
