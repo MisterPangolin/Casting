@@ -12,14 +12,17 @@ public class Gameplay : MonoBehaviour {
     /// <summary>
     /// Score équipe 1
     /// </summary>
-    public int scoreR;
     public Points AffichagePointB;
 
     /// <summary>
     /// score équipe 2
     /// </summary>
-    public int scoreB;
     public Points AffichagePointR;
+
+    /// <summary>
+    /// booléen qui permet de savoir si le score est affiché ou non 
+    /// </summary>
+    private bool ScoreOverlay = true;
 
 
     /// <summary>
@@ -59,15 +62,17 @@ public class Gameplay : MonoBehaviour {
     /// </summary>
     private void InputScore()
     {
+        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            GestionOverlayScore();
+        }
         if (Input.GetKey(KeyCode.B) && Input.GetKeyDown(KeyCode.KeypadPlus))
         {
             UpScore(AffichagePointB);
-            scoreB += 1;
         }
         if (Input.GetKey(KeyCode.B) && Input.GetKeyDown(KeyCode.KeypadMinus))
         {
             DownScore(AffichagePointB);
-            scoreB -= 1;
         }
         if (Input.GetKey(KeyCode.N) && Input.GetKeyDown(KeyCode.KeypadPlus))
         {
@@ -77,5 +82,18 @@ public class Gameplay : MonoBehaviour {
         {
             DownScore(AffichagePointR);
         }
+    }
+
+    private void GestionOverlayScore()
+    {
+        if (ScoreOverlay)
+        {
+            GetComponent<Animation>().Play("RetirerScores");
+            ScoreOverlay = false;
+            return;
+        }
+        GetComponent<Animation>().Play("AfficherScores");
+        ScoreOverlay = true;
+        return;
     }
 }

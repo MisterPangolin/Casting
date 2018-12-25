@@ -60,7 +60,11 @@ public class Points : MonoBehaviour {
     /// Diminue le score d'un point
     /// </summary>
     public void DownScore()
-    {
-        score -= 1;
+    {  
+        if(score>0)
+        {
+            score -= 1;
+        }
+        
     }
 }
