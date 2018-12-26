@@ -60,19 +60,35 @@ public class Gameplay : MonoBehaviour {
     private bool MainEquipeBleue;
 
     /// <summary>
+    /// booléen indiquant si la mosaique est affichée
+    /// </summary>
+    private bool MosaiqueAffiche = false;
+
+    /// <summary>
     /// liste des canevas de chaques phases
     /// </summary>
     public GameObject[] Phases;
 
+    /// <summary>
+    /// Booléen de validation de choix de question de mosaïque ou de menu
+    /// 0 = pas sélectioné
+    /// 1 = sélectioné 
+    /// 2 = validé
+    /// </summary>
+    private int Validation = 0;
+
+    // =======================================================================================================================================================================
+    // =========   Début des fonctions parceque quand même c'est un peut le bordel avec tout ces commentaires                                                    =============
+    // =======================================================================================================================================================================
 
     private void Awake()
     {
-        Phases[0].GetComponent<Animation>().Play("RetirerTOS");
         GetComponent<Animation>().Play("AfficherScores");
         ScoreOverlay = true;
         Phase = 1;
         BordB.color = new Vector4(255, 255, 255, 0);
         BordR.color = new Vector4(255, 255, 255, 0);
+        Validation = 0;
     }
 
     private void Update()
@@ -84,6 +100,7 @@ public class Gameplay : MonoBehaviour {
                 break;
 
             case 2:
+                Momo();
                 ChangementPhases();
                 break;
 
@@ -137,23 +154,8 @@ public class Gameplay : MonoBehaviour {
     }
 
     /// <summary>
-    /// Gère l'apparition et la disparition des scores
+    /// Gestion de la phase de Tirage au sort
     /// </summary>
-    private void GestionOverlayScore()
-    {
-        if (ScoreOverlay)
-        {
-            SwitchAfficher();
-            GetComponent<Animation>().Play("RetirerScores");
-            ScoreOverlay = false;
-            return;
-        }
-        GetComponent<Animation>().Play("AfficherScores");
-        SwitchRetirer();
-        ScoreOverlay = true;
-        return;
-    }
-
     private void TOS()
     {
         ChangementPhases();
@@ -174,8 +176,126 @@ public class Gameplay : MonoBehaviour {
             if(Phase == 2)
             {
                 Phases[0].GetComponent<Animation>().Play("RetirerTOS");
+                Phases[1].GetComponent<Animation>().Play("AfficherImagesMosaique");
+                MosaiqueAffiche = true;
             }
         }
+    }
+
+    /// <summary>
+    /// Fonction Gérant la phase de Mosaïque
+    /// </summary>
+    private void Momo()
+    {
+        if(Validation == 0 && !ScoreOverlay)
+        {
+            GestionInputMosaiqueAff();
+            return;
+        }
+        if(Validation == 1 && !ScoreOverlay)
+        {
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                Validation = 2;
+                Phases[2].GetComponent<Animation>().Play("AfficherQuestion");
+            }
+            if (Input.GetKeyDown(KeyCode.Backspace))
+            {
+                Validation = 0;
+                Phases[2].GetComponent<Animation>().Play("RetirerImage");
+                Phases[1].GetComponent<Animation>().Play("AfficherImagesMosaique");
+            }
+        }
+    }
+
+    /// <summary>
+    /// gère les input quand la mosaïque est affichée
+    /// </summary>
+    private void GestionInputMosaiqueAff()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            EnregistrementQuestionMomo(0);
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            EnregistrementQuestionMomo(1);
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            EnregistrementQuestionMomo(2);
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            EnregistrementQuestionMomo(3);
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            EnregistrementQuestionMomo(4);
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            EnregistrementQuestionMomo(5);
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            EnregistrementQuestionMomo(6);
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            EnregistrementQuestionMomo(7);
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            EnregistrementQuestionMomo(8);
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            EnregistrementQuestionMomo(9);
+            return;
+        }
+    }
+
+    private void EnregistrementQuestionMomo(int Q)
+    {
+        Phases[2].GetComponent<Momo>().image = mosaïque[Q].GetComponent<Image>();
+        Phases[2].GetComponent<Momo>().Question.text = mosaïque[Q].GetComponent<Question>().question;
+        Phases[2].GetComponent<Momo>().ReponseA.text = mosaïque[Q].GetComponent<Question>().propositions[0];
+        Phases[2].GetComponent<Momo>().ReponseB.text = mosaïque[Q].GetComponent<Question>().propositions[1];
+        Phases[2].GetComponent<Momo>().ReponseC.text = mosaïque[Q].GetComponent<Question>().propositions[2];
+        Phases[2].GetComponent<Momo>().ReponseD.text = mosaïque[Q].GetComponent<Question>().propositions[3];
+        Phases[2].GetComponent<Momo>().Rep = mosaïque[Q].GetComponent<Question>().réponse;
+        Validation = 1;
+        Phases[2].GetComponent<Momo>().QChoisie = Q;
+        Phases[1].GetComponent<Animation>().Play("RetirerImagesMosaique");
+        Phases[2].GetComponent<Animation>().Play("AfficherIQ");
+    }
+
+    /// <summary>
+    /// Gère l'apparition et la disparition des scores
+    /// </summary>
+    private void GestionOverlayScore()
+    {
+        if (ScoreOverlay)
+        {
+            SwitchAfficher();
+            GetComponent<Animation>().Play("RetirerScores");
+            ScoreOverlay = false;
+            return;
+        }
+        GetComponent<Animation>().Play("AfficherScores");
+        SwitchRetirer();
+        ScoreOverlay = true;
+        return;
     }
 
     /// <summary>
@@ -187,6 +307,17 @@ public class Gameplay : MonoBehaviour {
         {
             case 1:
                 Phases[0].GetComponent<Animation>().Play("RetirerTOS");
+                break;
+            case 2:
+                if(MosaiqueAffiche)
+                {
+                    Phases[1].GetComponent<Animation>().Play("RetirerImagesMosaique");
+                    break;
+                }
+                else
+                {
+
+                }
                 break;
         }
     }
@@ -200,6 +331,17 @@ public class Gameplay : MonoBehaviour {
         {
             case 1:
                 Phases[0].GetComponent<Animation>().Play("AfficherTOS");
+                break;
+            case 2:
+                if (MosaiqueAffiche)
+                {
+                    Phases[1].GetComponent<Animation>().Play("AfficherImagesMosaique");
+                    break;
+                }
+                else
+                {
+
+                }
                 break;
         }
     }
@@ -234,6 +376,55 @@ public class Gameplay : MonoBehaviour {
             Phase -= 1;
             Debug.Log("phase = " + Phase);
         }
+    }
+
+    /// <summary>
+    /// Gère le changement de bordure une fois le TOS fait
+    /// </summary>
+    /// <param name="désactiver">Vraie Si l'on veut arréter d'aaficher le bord</param>
+    private void ChangementBord(bool désactiver)
+    {
+        if(!désactiver)
+        {
+            if (!MainEquipeBleue)
+            {
+                AfficherBord(BordB);
+                RetirerBord(BordR);
+                MainEquipeBleue = true;
+                return;
+            }
+            else
+            {
+                AfficherBord(BordR);
+                RetirerBord(BordB);
+                MainEquipeBleue = false;
+                return;
+            }
+        }
+        if (désactiver)
+        {
+            if (!MainEquipeBleue)
+            {
+                RetirerBord(BordR);
+                MainEquipeBleue = true;
+                return;
+            }
+            else
+            {
+                RetirerBord(BordB);
+                MainEquipeBleue = false;
+                return;
+            }
+        }
+
+    }
+
+    /// <summary>
+    /// surcharge de la flemme
+    /// </summary>
+    private void ChangementBord()
+    {
+        ChangementBord(false);
     }
 
 }
