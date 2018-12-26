@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -391,7 +391,7 @@ MonoBehaviour:
   - "r\xE9ponse 1"
   - "r\xE9ponse 2"
   - "r\xE9ponse 3"
-  "r\xE9ponse": 0
+  "r\xE9ponse": 
 --- !u!1 &213522180
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -741,7 +741,7 @@ MonoBehaviour:
   - "r\xE9ponse 1"
   - "r\xE9ponse 2"
   - "r\xE9ponse 3"
-  "r\xE9ponse": 0
+  "r\xE9ponse": 
 --- !u!1 &352812286
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,7 +830,7 @@ MonoBehaviour:
   - "r\xE9ponse 1"
   - "r\xE9ponse 2"
   - "r\xE9ponse 3"
-  "r\xE9ponse": 0
+  "r\xE9ponse": 
 --- !u!1 &432072273
 GameObject:
   m_ObjectHideFlags: 0
@@ -1584,7 +1584,7 @@ MonoBehaviour:
   - "r\xE9ponse 1"
   - "r\xE9ponse 2"
   - "r\xE9ponse 3"
-  "r\xE9ponse": 0
+  "r\xE9ponse": 
 --- !u!1 &1006890225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,7 +1748,7 @@ MonoBehaviour:
   - "r\xE9ponse 1"
   - "r\xE9ponse 2"
   - "r\xE9ponse 3"
-  "r\xE9ponse": 0
+  "r\xE9ponse": 
 --- !u!1 &1156253797
 GameObject:
   m_ObjectHideFlags: 0
@@ -1796,7 +1796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2037,7 +2037,9 @@ MonoBehaviour:
   ReponseB: {fileID: 2044427935}
   ReponseC: {fileID: 1156253799}
   ReponseD: {fileID: 213522182}
-  validation: 0
+  QChoisie: 0
+  Rep: 
+  "RepPropos\xE9": 0
 --- !u!1 &1184623788
 GameObject:
   m_ObjectHideFlags: 0
@@ -2201,7 +2203,7 @@ MonoBehaviour:
   - "r\xE9ponse 1"
   - "r\xE9ponse 2"
   - "r\xE9ponse 3"
-  "r\xE9ponse": 0
+  "r\xE9ponse": 
 --- !u!1 &1338842703
 GameObject:
   m_ObjectHideFlags: 0
@@ -2364,7 +2366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2480,7 +2482,7 @@ MonoBehaviour:
   - "r\xE9ponse 1"
   - "r\xE9ponse 2"
   - "r\xE9ponse 3"
-  "r\xE9ponse": 0
+  "r\xE9ponse": 
 --- !u!1 &1690461554
 GameObject:
   m_ObjectHideFlags: 0
@@ -2569,7 +2571,7 @@ MonoBehaviour:
   - "r\xE9ponse 1"
   - "r\xE9ponse 2"
   - "r\xE9ponse 3"
-  "r\xE9ponse": 0
+  "r\xE9ponse": 
 --- !u!1 &1690957745
 GameObject:
   m_ObjectHideFlags: 0
@@ -2658,7 +2660,7 @@ MonoBehaviour:
   - "r\xE9ponse 1"
   - "r\xE9ponse 2"
   - "r\xE9ponse 3"
-  "r\xE9ponse": 0
+  "r\xE9ponse": 
 --- !u!1 &1848243477
 GameObject:
   m_ObjectHideFlags: 0
@@ -2954,7 +2956,7 @@ MonoBehaviour:
   - "r\xE9ponse 1"
   - "r\xE9ponse 2"
   - "r\xE9ponse 3"
-  "r\xE9ponse": 0
+  "r\xE9ponse": 
 --- !u!1 &2044427933
 GameObject:
   m_ObjectHideFlags: 0
@@ -3002,7 +3004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

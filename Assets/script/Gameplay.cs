@@ -197,14 +197,8 @@ public class Gameplay : MonoBehaviour {
             if (Input.GetKeyDown(KeyCode.Backspace))
             {
                 Validation = 0;
-                Phases[2].GetComponent<Animation>().Play("RetirerImage");
+                Phases[2].GetComponent<Animation>().Play("RetirerIQ");
                 Phases[1].GetComponent<Animation>().Play("AfficherImagesMosaique");
-                return;
-            }
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Validation = 2;
-                Phases[2].GetComponent<Animation>().Play("AfficherQestion");
                 return;
             }
         }    
@@ -279,6 +273,11 @@ public class Gameplay : MonoBehaviour {
         }
     }
 
+
+    /// <summary>
+    /// enregistre toutes les informations sur la question.
+    /// </summary>
+    /// <param name="Q"></param>
     private void EnregistrementQuestionMomo(int Q)
     {
         Phases[2].GetComponent<Momo>().image = mosaïque[Q].GetComponent<Image>();

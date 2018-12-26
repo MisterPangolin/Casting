@@ -29,7 +29,6 @@ public class Question : MonoBehaviour {
         propositions[1] = "réponse 1";
         propositions[2] = "réponse 2";
         propositions[3] = "réponse 3";
-        réponse = 0;
     }
 
     /// <summary>
@@ -41,7 +40,7 @@ public class Question : MonoBehaviour {
     /// <param name="_c"> réponse c</param>
     /// <param name="_d"> réponse d</param>
     /// <param name="_réponse"></param>
-    Question(string _question, string _a, string _b, string _c, string _d, int _réponse )
+    Question(string _question, string _a, string _b, string _c, string _d, int[] _réponse )
     {
         question = _question;
         nbProposition = 4;
@@ -59,7 +58,7 @@ public class Question : MonoBehaviour {
     /// <param name="_question"> question</param>
     /// <param name="_nbProposition"> nombre de propostion</param>
     /// <param name="_réponse"> réf bonne réponse</param>
-    Question(string _question, int _nbProposition, int _réponse)
+    Question(string _question, int _nbProposition, int[] _réponse)
     {
         question = _question;
         nbProposition = _nbProposition;
