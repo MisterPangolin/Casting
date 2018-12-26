@@ -96,7 +96,6 @@ public class Gameplay : MonoBehaviour {
 
             case 2:
                 Momo();
-                ChangementPhases();
                 break;
 
         }
@@ -182,7 +181,8 @@ public class Gameplay : MonoBehaviour {
     /// </summary>
     private void Momo()
     {
-        if(Validation == 0 && !ScoreOverlay)
+        ChangementPhases();
+        if (Validation == 0 && !ScoreOverlay)
         {
             GestionInputMosaiqueAff();
             return;
@@ -202,7 +202,7 @@ public class Gameplay : MonoBehaviour {
                 return;
             }
         }    
-        if (Validation == 2 && !ScoreOverlay)
+        if (Validation >= 2 && !ScoreOverlay)
         {
             GestionReponseMosaique();
         }
@@ -213,7 +213,10 @@ public class Gameplay : MonoBehaviour {
     /// </summary>
     private void GestionReponseMosaique()
     {
+        if (Validation ==2)
+        {
 
+        }
     }
 
     /// <summary>
@@ -329,10 +332,10 @@ public class Gameplay : MonoBehaviour {
                 }
                 if (Validation == 1)
                 {
-                    Phases[2].GetComponent<Animation>().Play("RetirerImages");
+                    Phases[2].GetComponent<Animation>().Play("RetirerIQ");
                     break;
                 }
-                if (Validation == 2)
+                if (Validation >= 2)
                 {
                     Phases[2].GetComponent<Animation>().Play("RetirerTout");
                     break;
@@ -359,10 +362,10 @@ public class Gameplay : MonoBehaviour {
                 }
                 if (Validation == 1)
                 {
-                    Phases[2].GetComponent<Animation>().Play("AfficherImages");
+                    Phases[2].GetComponent<Animation>().Play("AfficherIQ");
                     break;
                 }
-                if (Validation == 2)
+                if (Validation >= 2)
                 {
                     Phases[2].GetComponent<Animation>().Play("AfficherTout");
                     break;
