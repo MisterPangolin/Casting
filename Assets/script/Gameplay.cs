@@ -60,11 +60,6 @@ public class Gameplay : MonoBehaviour {
     private bool MainEquipeBleue;
 
     /// <summary>
-    /// booléen indiquant si la mosaique est affichée
-    /// </summary>
-    private bool MosaiqueAffiche = false;
-
-    /// <summary>
     /// liste des canevas de chaques phases
     /// </summary>
     public GameObject[] Phases;
@@ -177,7 +172,7 @@ public class Gameplay : MonoBehaviour {
             {
                 Phases[0].GetComponent<Animation>().Play("RetirerTOS");
                 Phases[1].GetComponent<Animation>().Play("AfficherImagesMosaique");
-                MosaiqueAffiche = true;
+                Validation = 0;
             }
         }
     }
@@ -204,8 +199,27 @@ public class Gameplay : MonoBehaviour {
                 Validation = 0;
                 Phases[2].GetComponent<Animation>().Play("RetirerImage");
                 Phases[1].GetComponent<Animation>().Play("AfficherImagesMosaique");
+                return;
             }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Validation = 2;
+                Phases[2].GetComponent<Animation>().Play("AfficherQestion");
+                return;
+            }
+        }    
+        if (Validation == 2 && !ScoreOverlay)
+        {
+            GestionReponseMosaique();
         }
+    }
+
+    /// <summary>
+    /// Gère l'affichage de la proposition choisie, et de la bonne réponse, le retour à la mosaïque et le changment de bord
+    /// </summary>
+    private void GestionReponseMosaique()
+    {
+
     }
 
     /// <summary>
@@ -309,14 +323,20 @@ public class Gameplay : MonoBehaviour {
                 Phases[0].GetComponent<Animation>().Play("RetirerTOS");
                 break;
             case 2:
-                if(MosaiqueAffiche)
+                if(Validation == 0)
                 {
                     Phases[1].GetComponent<Animation>().Play("RetirerImagesMosaique");
                     break;
                 }
-                else
+                if (Validation == 1)
                 {
-
+                    Phases[2].GetComponent<Animation>().Play("RetirerImages");
+                    break;
+                }
+                if (Validation == 2)
+                {
+                    Phases[2].GetComponent<Animation>().Play("RetirerTout");
+                    break;
                 }
                 break;
         }
@@ -333,14 +353,20 @@ public class Gameplay : MonoBehaviour {
                 Phases[0].GetComponent<Animation>().Play("AfficherTOS");
                 break;
             case 2:
-                if (MosaiqueAffiche)
+                if (Validation == 0)
                 {
                     Phases[1].GetComponent<Animation>().Play("AfficherImagesMosaique");
                     break;
                 }
-                else
+                if (Validation == 1)
                 {
-
+                    Phases[2].GetComponent<Animation>().Play("AfficherImages");
+                    break;
+                }
+                if (Validation == 2)
+                {
+                    Phases[2].GetComponent<Animation>().Play("AfficherTout");
+                    break;
                 }
                 break;
         }

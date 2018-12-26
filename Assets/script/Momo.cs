@@ -12,6 +12,6 @@ public class Momo : MonoBehaviour {
     public Text ReponseC;
     public Text ReponseD;
     public int QChoisie;
-    public int Rep;
+    public int[] Rep;
     public int RepProposé;
 }
