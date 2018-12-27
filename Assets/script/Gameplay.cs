@@ -215,7 +215,76 @@ public class Gameplay : MonoBehaviour {
     {
         if (Validation ==2)
         {
+            if (Input.GetKeyDown(KeyCode.Keypad1))
+            {
+                PassageRougePolice(Phases[2].GetComponent<Momo>().ReponseA);
+            }
+            if (Input.GetKeyDown(KeyCode.Keypad2))
+            {
+                PassageRougePolice(Phases[2].GetComponent<Momo>().ReponseB);
+            }
+            if (Input.GetKeyDown(KeyCode.Keypad3))
+            {
+                PassageRougePolice(Phases[2].GetComponent<Momo>().ReponseC);
+            }
+            if (Input.GetKeyDown(KeyCode.Keypad4))
+            {
+                PassageRougePolice(Phases[2].GetComponent<Momo>().ReponseD);
+            }
+            if (Input.GetKeyDown(KeyCode.KeypadPlus))
+            {
+                Validation = 3;
+                AffichageBonneRep();
+            }
+        }
+        if (Validation == 3)
+        {
+            
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                mosaïque[Phases[2].GetComponent<Momo>().QChoisie].GetComponent<Image>().color = new Vector4(0.5f, 0.5f, 0.5f, 0f);
+                Phases[2].GetComponent<Animation>().Play("RetirerTout");
+                Phases[1].GetComponent<Animation>().Play("AfficherImagesMosaique");
+                ChangementBord();
+                Validation = 0;
+            }
+        }
+    }
 
+    private void AffichageBonneRep()
+    {
+        int[] bR = Phases[2].GetComponent<Momo>().Rep;
+        for (int i = 0; i < bR.Length; i++)
+        {
+            switch (bR[0])
+            {
+                case 0:
+                    Phases[2].GetComponent<Momo>().ReponseA.color = Color.green;
+                    break;
+                case 1:
+                    Phases[2].GetComponent<Momo>().ReponseB.color = Color.green;
+                    break;
+                case 2:
+                    Phases[2].GetComponent<Momo>().ReponseC.color = Color.green;
+                    break;
+                case 3:
+                    Phases[2].GetComponent<Momo>().ReponseD.color = Color.green;
+                    break;
+            }
+        }
+    }
+
+    private void PassageRougePolice(Text pouet )
+    {
+        if(pouet.color == Color.yellow)
+        {
+            pouet.color = Color.white;
+            return;
+        }
+        else
+        {
+            pouet.color = Color.yellow;
+            return;
         }
     }
 

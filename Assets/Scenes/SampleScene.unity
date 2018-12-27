@@ -391,7 +391,7 @@ MonoBehaviour:
   - "r\xE9ponse 1"
   - "r\xE9ponse 2"
   - "r\xE9ponse 3"
-  "r\xE9ponse": 
+  "r\xE9ponse": 00000000
 --- !u!1 &213522180
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,7 +741,7 @@ MonoBehaviour:
   - "r\xE9ponse 1"
   - "r\xE9ponse 2"
   - "r\xE9ponse 3"
-  "r\xE9ponse": 
+  "r\xE9ponse": 00000000
 --- !u!1 &352812286
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,7 +830,7 @@ MonoBehaviour:
   - "r\xE9ponse 1"
   - "r\xE9ponse 2"
   - "r\xE9ponse 3"
-  "r\xE9ponse": 
+  "r\xE9ponse": 00000000
 --- !u!1 &432072273
 GameObject:
   m_ObjectHideFlags: 0
@@ -1584,7 +1584,7 @@ MonoBehaviour:
   - "r\xE9ponse 1"
   - "r\xE9ponse 2"
   - "r\xE9ponse 3"
-  "r\xE9ponse": 
+  "r\xE9ponse": 00000000
 --- !u!1 &1006890225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1748,7 +1748,7 @@ MonoBehaviour:
   - "r\xE9ponse 1"
   - "r\xE9ponse 2"
   - "r\xE9ponse 3"
-  "r\xE9ponse": 
+  "r\xE9ponse": 00000000
 --- !u!1 &1156253797
 GameObject:
   m_ObjectHideFlags: 0
@@ -1957,7 +1957,7 @@ Animation:
   - {fileID: 7400000, guid: 6e7ef2062b00ee54a9c9f180570c562e, type: 2}
   - {fileID: 7400000, guid: 4023516337e90804f9cbc2689874c1b9, type: 2}
   - {fileID: 7400000, guid: 08a4e3753794e8e4a84215e437aad0ba, type: 2}
-  - {fileID: 7400000, guid: eb16b83e40fb727409c52382e8580548, type: 2}
+  - {fileID: 7400000, guid: fc0910dea145ab84a86ffb0c4ec096d1, type: 2}
   - {fileID: 7400000, guid: 35019fdc15f79f94aa27ca6245d97fde, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
@@ -2203,7 +2203,7 @@ MonoBehaviour:
   - "r\xE9ponse 1"
   - "r\xE9ponse 2"
   - "r\xE9ponse 3"
-  "r\xE9ponse": 
+  "r\xE9ponse": 00000000
 --- !u!1 &1338842703
 GameObject:
   m_ObjectHideFlags: 0
@@ -2482,7 +2482,7 @@ MonoBehaviour:
   - "r\xE9ponse 1"
   - "r\xE9ponse 2"
   - "r\xE9ponse 3"
-  "r\xE9ponse": 
+  "r\xE9ponse": 00000000
 --- !u!1 &1690461554
 GameObject:
   m_ObjectHideFlags: 0
@@ -2571,7 +2571,7 @@ MonoBehaviour:
   - "r\xE9ponse 1"
   - "r\xE9ponse 2"
   - "r\xE9ponse 3"
-  "r\xE9ponse": 
+  "r\xE9ponse": 00000000
 --- !u!1 &1690957745
 GameObject:
   m_ObjectHideFlags: 0
@@ -2660,7 +2660,7 @@ MonoBehaviour:
   - "r\xE9ponse 1"
   - "r\xE9ponse 2"
   - "r\xE9ponse 3"
-  "r\xE9ponse": 
+  "r\xE9ponse": 00000000
 --- !u!1 &1848243477
 GameObject:
   m_ObjectHideFlags: 0
@@ -2956,7 +2956,7 @@ MonoBehaviour:
   - "r\xE9ponse 1"
   - "r\xE9ponse 2"
   - "r\xE9ponse 3"
-  "r\xE9ponse": 
+  "r\xE9ponse": 00000000
 --- !u!1 &2044427933
 GameObject:
   m_ObjectHideFlags: 0
