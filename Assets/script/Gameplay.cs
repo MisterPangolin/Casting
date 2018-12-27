@@ -181,10 +181,17 @@ public class Gameplay : MonoBehaviour {
     /// </summary>
     private void Momo()
     {
-        ChangementPhases();
+        
         if (Validation == 0 && !ScoreOverlay)
         {
+            ChangementPhases();
             GestionInputMosaiqueAff();
+            if(Phase == 3)
+            {
+                Phases[1].GetComponent<Animation>().Play("RetirerImagesMosaique");
+
+                ChangementBord(false);
+            }
             return;
         }
         if(Validation == 1 && !ScoreOverlay)
