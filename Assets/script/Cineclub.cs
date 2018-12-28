@@ -8,12 +8,12 @@ public class Cineclub : MonoBehaviour {
     public Text Proposition1;
     public Text Proposition2;
     public Text LesDeux;
+    private int etape = 0;
 
     /// <summary>
     /// Compte le nombre de sel ou poivre à faire
     /// </summary>
     private int Compte = 0;
-    private int Etape = 0;
 
 
     /// <summary>
@@ -34,6 +34,44 @@ public class Cineclub : MonoBehaviour {
             {
                 Proposition2.text ="ou " + GetComponent<Transform>().GetChild(Compte).GetComponent<SelPoivre>().Proposition2 + " ?";
                 LesDeux.text = "";
+            }
+        }
+    }
+
+    public int getetape()
+    {
+        return etape;
+    }
+
+    public void CinéClub()
+    {
+        if (etape ==0)
+        {
+            if(Input.GetKeyDown(KeyCode.Space))
+            {
+                MAJTexte();
+                etape = 1;
+                AffichageTheme(true);
+            }
+            if(Input.GetKey(KeyCode.P))
+            {
+                if(Input.GetKeyDown(KeyCode.KeypadPlus))
+                {
+                    AddCompte();
+                }
+                if (Input.GetKeyDown(KeyCode.KeypadMinus))
+                {
+                    SubCompte();
+                }
+            }
+        }
+        if (etape == 1)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                etape = 0;
+                AffichageTheme(false);
+                Compte += 1;
             }
         }
     }
@@ -107,9 +145,17 @@ public class Cineclub : MonoBehaviour {
         }
     }
 
-    public void GestionAffichage()
+    public void GestionAffichage(bool oui)
     {
+        switch(etape)
+        {
+            case 0:
+                AffichageTitre(oui);
+                break;
+            case 1:
+                Affichagetout(oui);
+                break;
+        }
 
     }
-
 }

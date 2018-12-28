@@ -97,11 +97,50 @@ public class Gameplay : MonoBehaviour {
             case 2:
                 Momo();
                 break;
-
+            case 3:
+                GestionChangementPhaseCC();
+                Phases[3].GetComponent<Cineclub>().CinéClub();
+                PrendreMainCineClub();
+                break;
         }
         InputScore();
     }
-       
+    
+    private void GestionChangementPhaseCC()
+    {
+        ChangementPhases();
+        if(Phase == 4)
+        {
+            Phases[3].GetComponent<Cineclub>().GestionAffichage(false);
+        }
+    }
+
+    private void PrendreMainCineClub()
+    {
+        if (Phases[3].GetComponent<Cineclub>().getetape() == 1)
+        {
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                AfficherBord(BordB);
+            }
+            if (Input.GetKeyDown(KeyCode.N))
+            {
+                AfficherBord(BordR);
+            }
+            if (Input.GetKeyDown(KeyCode.V))
+            {
+                if (BordB.color.a == 1)
+                {
+                    RetirerBord(BordB);
+                }
+                if (BordR.color.a == 1)
+                {
+                    RetirerBord(BordR);
+                }
+            }
+        }
+    }
+
     /// <summary>
     /// augmente le score de 1
     /// </summary>
@@ -189,7 +228,13 @@ public class Gameplay : MonoBehaviour {
             if(Phase == 3)
             {
                 Phases[1].GetComponent<Animation>().Play("RetirerImagesMosaique");
-
+                Phases[3].GetComponent<Cineclub>().AffichageTitre(true);
+                ChangementBord(false);
+            }
+            if (Phase == 1)
+            {
+                Phases[1].GetComponent<Animation>().Play("RetirerImagesMosaique");
+                Phases[0].GetComponent<Animation>().Play("AfficherTOS");
                 ChangementBord(false);
             }
             return;
@@ -417,6 +462,9 @@ public class Gameplay : MonoBehaviour {
                     break;
                 }
                 break;
+            case 3:
+                Phases[3].GetComponent<Cineclub>().GestionAffichage(false);
+                break;
         }
     }
 
@@ -446,6 +494,9 @@ public class Gameplay : MonoBehaviour {
                     Phases[2].GetComponent<Animation>().Play("AfficherTout");
                     break;
                 }
+                break;
+            case 3:
+                Phases[3].GetComponent<Cineclub>().GestionAffichage(true);
                 break;
         }
     }
