@@ -129,11 +129,11 @@ public class Gameplay : MonoBehaviour {
             }
             if (Input.GetKeyDown(KeyCode.V))
             {
-                if (BordB.color.a == 1)
+                if (BordB.color.a > 1)
                 {
                     RetirerBord(BordB);
                 }
-                if (BordR.color.a == 1)
+                if (BordR.color.a > 1)
                 {
                     RetirerBord(BordR);
                 }
@@ -219,8 +219,7 @@ public class Gameplay : MonoBehaviour {
     /// Fonction Gérant la phase de Mosaïque
     /// </summary>
     private void Momo()
-    {
-        
+    {        
         if (Validation == 0 && !ScoreOverlay)
         {
             ChangementPhases();
@@ -229,17 +228,17 @@ public class Gameplay : MonoBehaviour {
             {
                 Phases[1].GetComponent<Animation>().Play("RetirerImagesMosaique");
                 Phases[3].GetComponent<Cineclub>().AffichageTitre(true);
-                ChangementBord(false);
+                ChangementBord(true);
             }
             if (Phase == 1)
             {
                 Phases[1].GetComponent<Animation>().Play("RetirerImagesMosaique");
                 Phases[0].GetComponent<Animation>().Play("AfficherTOS");
-                ChangementBord(false);
+                ChangementBord(true);
             }
             return;
         }
-        if(Validation == 1 && !ScoreOverlay)
+        if (Validation == 1 && !ScoreOverlay)
         {
             if(Input.GetKeyDown(KeyCode.Space))
             {

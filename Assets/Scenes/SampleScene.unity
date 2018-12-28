@@ -1509,7 +1509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1719,6 +1719,7 @@ GameObject:
   - component: {fileID: 1002514866}
   - component: {fileID: 1002514865}
   - component: {fileID: 1002514864}
+  - component: {fileID: 1002514867}
   m_Layer: 5
   m_Name: "Cin\xE9Club"
   m_TagString: Untagged
@@ -1738,7 +1739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1777,6 +1778,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 711616643}
+  - {fileID: 1750588789}
   m_Father: {fileID: 1975934448}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1785,6 +1787,20 @@ RectTransform:
   m_AnchoredPosition: {x: 17.3, y: 13.8}
   m_SizeDelta: {x: 353.1, y: 160.3}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1002514867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1002514863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5f1a381a6121f14d9fccd525a53f86b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Proposition1: {fileID: 1207474416}
+  Proposition2: {fileID: 1051711939}
+  LesDeux: {fileID: 744631721}
 --- !u!1 &1006890225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1907,7 +1923,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2437,7 +2453,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3011,6 +3027,67 @@ MonoBehaviour:
   - "r\xE9ponse 2"
   - "r\xE9ponse 3"
   "r\xE9ponse": 00000000
+--- !u!1001 &1750588788
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1002514866}
+    m_Modifications:
+    - target: {fileID: 4182248765994868, guid: ac567434858310641a7ff2c3ed70142e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -7.0289125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4182248765994868, guid: ac567434858310641a7ff2c3ed70142e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -39.84785
+      objectReference: {fileID: 0}
+    - target: {fileID: 4182248765994868, guid: ac567434858310641a7ff2c3ed70142e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 109.8125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4182248765994868, guid: ac567434858310641a7ff2c3ed70142e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4182248765994868, guid: ac567434858310641a7ff2c3ed70142e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4182248765994868, guid: ac567434858310641a7ff2c3ed70142e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4182248765994868, guid: ac567434858310641a7ff2c3ed70142e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4182248765994868, guid: ac567434858310641a7ff2c3ed70142e, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708557429970512, guid: ac567434858310641a7ff2c3ed70142e, type: 2}
+      propertyPath: m_Name
+      value: SelPoivre (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114947334780455580, guid: ac567434858310641a7ff2c3ed70142e,
+        type: 2}
+      propertyPath: Proposition1
+      value: Tuc
+      objectReference: {fileID: 0}
+    - target: {fileID: 114947334780455580, guid: ac567434858310641a7ff2c3ed70142e,
+        type: 2}
+      propertyPath: Proposition2
+      value: un tuc
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ac567434858310641a7ff2c3ed70142e, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!4 &1750588789 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4182248765994868, guid: ac567434858310641a7ff2c3ed70142e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1750588788}
 --- !u!1 &1848243477
 GameObject:
   m_ObjectHideFlags: 0

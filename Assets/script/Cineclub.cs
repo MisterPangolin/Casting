@@ -47,11 +47,13 @@ public class Cineclub : MonoBehaviour {
     {
         if (etape ==0)
         {
-            if(Input.GetKeyDown(KeyCode.Space))
+            if(Input.GetKeyDown(KeyCode.M))
             {
+                Debug.Log(etape);
                 MAJTexte();
                 etape = 1;
                 AffichageTheme(true);
+                return;
             }
             if(Input.GetKey(KeyCode.P))
             {
@@ -67,8 +69,9 @@ public class Cineclub : MonoBehaviour {
         }
         if (etape == 1)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.M))
             {
+                Debug.Log(etape);
                 etape = 0;
                 AffichageTheme(false);
                 Compte += 1;
