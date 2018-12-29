@@ -13,5 +13,4 @@ public class Mosaique : MonoBehaviour {
     public Text reponse_d_;
     public int question_choisie_;
     public int[] rep_;
-    public int rep_proposee_;
 }
