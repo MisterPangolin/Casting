@@ -104,7 +104,7 @@ public class Gameplay : MonoBehaviour {
                 break;
 
             case 2:
-                Momo();
+                PhaseMosaique();
                 break;
             case 3:
                 GestionChangementPhaseCC();
@@ -171,7 +171,7 @@ public class Gameplay : MonoBehaviour {
     }
 
     /// <summary>
-    /// Gère les Input clavier pour la mise à jour des scores
+    /// Gère les Inputs clavier pour la mise à jour des scores
     /// </summary>
     private void InputScore()
     {
@@ -227,9 +227,9 @@ public class Gameplay : MonoBehaviour {
     }
 
     /// <summary>
-    /// Fonction Gérant la phase de Mosaïque
+    /// Fonction gérant la phase de Mosaïque
     /// </summary>
-    private void Momo()
+    private void PhaseMosaique()
     {        
         if (validation_ == 0 && !score_overlay_)
         {
@@ -271,7 +271,8 @@ public class Gameplay : MonoBehaviour {
     }
 
     /// <summary>
-    /// Gère l'affichage de la proposition choisie, et de la bonne réponse, le retour à la mosaïque et le changment de bord
+    /// Gère l'affichage de la proposition choisie, et de la bonne réponse,
+    /// le retour à la mosaïque et le changement de bordure.
     /// </summary>
     private void GestionReponseMosaique()
     {
@@ -279,19 +280,19 @@ public class Gameplay : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.Keypad1))
             {
-                PassageRougePolice(phases_[2].GetComponent<Momo>().ReponseA);
+                SwitchCouleurTexteSelection(phases_[2].GetComponent<Mosaique>().ReponseA);
             }
             if (Input.GetKeyDown(KeyCode.Keypad2))
             {
-                PassageRougePolice(phases_[2].GetComponent<Momo>().ReponseB);
+                SwitchCouleurTexteSelection(phases_[2].GetComponent<Mosaique>().ReponseB);
             }
             if (Input.GetKeyDown(KeyCode.Keypad3))
             {
-                PassageRougePolice(phases_[2].GetComponent<Momo>().ReponseC);
+                SwitchCouleurTexteSelection(phases_[2].GetComponent<Mosaique>().ReponseC);
             }
             if (Input.GetKeyDown(KeyCode.Keypad4))
             {
-                PassageRougePolice(phases_[2].GetComponent<Momo>().ReponseD);
+                SwitchCouleurTexteSelection(phases_[2].GetComponent<Mosaique>().ReponseD);
             }
             if (Input.GetKeyDown(KeyCode.KeypadPlus))
             {
@@ -304,7 +305,7 @@ public class Gameplay : MonoBehaviour {
             
             if(Input.GetKeyDown(KeyCode.Space))
             {
-                mosaique_[phases_[2].GetComponent<Momo>().QChoisie].GetComponent<Image>().color = new Vector4(0.5f, 0.5f, 0.5f, 0f);
+                mosaique_[phases_[2].GetComponent<Mosaique>().QChoisie].GetComponent<Image>().color = new Vector4(0.5f, 0.5f, 0.5f, 0f);
                 phases_[2].GetComponent<Animation>().Play("RetirerTout");
                 phases_[1].GetComponent<Animation>().Play("AfficherImagesMosaique");
                 ChangementBord();
@@ -315,37 +316,37 @@ public class Gameplay : MonoBehaviour {
 
     private void AffichageBonneRep()
     {
-        int[] bR = phases_[2].GetComponent<Momo>().Rep;
-        for (int i = 0; i < bR.Length; i++)
+        int[] bonne_reponse = phases_[2].GetComponent<Mosaique>().Rep; // numéro(s) de la (des) bonne(s) réponse(s)
+        for (int i = 0; i < bonne_reponse.Length; i++)
         {
-            switch (bR[0])
+            switch (bonne_reponse[0])
             {
                 case 0:
-                    phases_[2].GetComponent<Momo>().ReponseA.color = Color.green;
+                    phases_[2].GetComponent<Mosaique>().ReponseA.color = Color.green;
                     break;
                 case 1:
-                    phases_[2].GetComponent<Momo>().ReponseB.color = Color.green;
+                    phases_[2].GetComponent<Mosaique>().ReponseB.color = Color.green;
                     break;
                 case 2:
-                    phases_[2].GetComponent<Momo>().ReponseC.color = Color.green;
+                    phases_[2].GetComponent<Mosaique>().ReponseC.color = Color.green;
                     break;
                 case 3:
-                    phases_[2].GetComponent<Momo>().ReponseD.color = Color.green;
+                    phases_[2].GetComponent<Mosaique>().ReponseD.color = Color.green;
                     break;
             }
         }
     }
 
-    private void PassageRougePolice(Text pouet )
+    private void SwitchCouleurTexteSelection(Text texte_couleur_a_changer )
     {
-        if(pouet.color == Color.yellow)
+        if(texte_couleur_a_changer.color == Color.yellow)
         {
-            pouet.color = Color.white;
+            texte_couleur_a_changer.color = Color.white;
             return;
         }
         else
         {
-            pouet.color = Color.yellow;
+            texte_couleur_a_changer.color = Color.yellow;
             return;
         }
     }
@@ -414,15 +415,15 @@ public class Gameplay : MonoBehaviour {
     /// <param name="Q"></param>
     private void EnregistrementQuestionMomo(int Q)
     {
-        phases_[2].GetComponent<Momo>().image = mosaique_[Q].GetComponent<Image>();
-        phases_[2].GetComponent<Momo>().Question.text = mosaique_[Q].GetComponent<Question>().question;
-        phases_[2].GetComponent<Momo>().ReponseA.text = mosaique_[Q].GetComponent<Question>().propositions[0];
-        phases_[2].GetComponent<Momo>().ReponseB.text = mosaique_[Q].GetComponent<Question>().propositions[1];
-        phases_[2].GetComponent<Momo>().ReponseC.text = mosaique_[Q].GetComponent<Question>().propositions[2];
-        phases_[2].GetComponent<Momo>().ReponseD.text = mosaique_[Q].GetComponent<Question>().propositions[3];
-        phases_[2].GetComponent<Momo>().Rep = mosaique_[Q].GetComponent<Question>().réponse;
+        phases_[2].GetComponent<Mosaique>().image = mosaique_[Q].GetComponent<Image>();
+        phases_[2].GetComponent<Mosaique>().Question.text = mosaique_[Q].GetComponent<Question>().question;
+        phases_[2].GetComponent<Mosaique>().ReponseA.text = mosaique_[Q].GetComponent<Question>().propositions[0];
+        phases_[2].GetComponent<Mosaique>().ReponseB.text = mosaique_[Q].GetComponent<Question>().propositions[1];
+        phases_[2].GetComponent<Mosaique>().ReponseC.text = mosaique_[Q].GetComponent<Question>().propositions[2];
+        phases_[2].GetComponent<Mosaique>().ReponseD.text = mosaique_[Q].GetComponent<Question>().propositions[3];
+        phases_[2].GetComponent<Mosaique>().Rep = mosaique_[Q].GetComponent<Question>().réponse;
         validation_ = 1;
-        phases_[2].GetComponent<Momo>().QChoisie = Q;
+        phases_[2].GetComponent<Mosaique>().QChoisie = Q;
         phases_[1].GetComponent<Animation>().Play("RetirerImagesMosaique");
         phases_[2].GetComponent<Animation>().Play("AfficherIQ");
     }
