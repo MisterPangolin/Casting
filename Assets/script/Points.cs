@@ -19,6 +19,8 @@ public class Points : MonoBehaviour {
     /// </summary>
     private int dizaines = 0;
     public Text TDizaine;
+
+    /// <summary>
     /// séparation en dizaines et unités, pour permettres d'afficher les 
     /// </summary>
     private int unité = 0;
