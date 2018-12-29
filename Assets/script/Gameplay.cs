@@ -108,7 +108,7 @@ public class Gameplay : MonoBehaviour {
                 break;
             case 3:
                 GestionChangementPhaseCC();
-                phases_[3].GetComponent<Cineclub>().CinéClub();
+                phases_[3].GetComponent<CineClub>().CinéClub();
                 PrendreMainCineClub();
                 break;
         }
@@ -122,13 +122,13 @@ public class Gameplay : MonoBehaviour {
         ChangementPhases();
         if(phase_ == 4)
         {
-            phases_[3].GetComponent<Cineclub>().GestionAffichage(false);
+            phases_[3].GetComponent<CineClub>().GestionAffichage(false);
         }
     }
 
     private void PrendreMainCineClub()
     {
-        if (phases_[3].GetComponent<Cineclub>().getetape() == 1)
+        if (phases_[3].GetComponent<CineClub>().Etape_ == 1)
         {
             if (Input.GetKeyDown(KeyCode.B))
             {
@@ -155,19 +155,19 @@ public class Gameplay : MonoBehaviour {
     /// <summary>
     /// augmente le score de 1
     /// </summary>
-    /// <param name="_UpScore">Score à augmenter</param>
-    private void UpScore( Points _UpScore)
+    /// <param name="up_score">Score à augmenter</param>
+    private void UpScore( Points up_score)
     {
-        _UpScore.UpScore();
+        up_score.UpScore();
     }
 
     /// <summary>
     /// diminue le score de 1
     /// </summary>
-    /// <param name="_DownScore">Score à diminuer</param>
-    private void DownScore(Points _DownScore)
+    /// <param name="down_score">Score à diminuer</param>
+    private void DownScore(Points down_score)
     {
-        _DownScore.DownScore();
+        down_score.DownScore();
     }
 
     /// <summary>
@@ -238,7 +238,7 @@ public class Gameplay : MonoBehaviour {
             if(phase_ == 3)
             {
                 phases_[1].GetComponent<Animation>().Play("RetirerImagesMosaique");
-                phases_[3].GetComponent<Cineclub>().AffichageTitre(true);
+                phases_[3].GetComponent<CineClub>().AffichageTitre(true);
                 ChangementBord(true);
             }
             if (phase_ == 1)
@@ -280,19 +280,19 @@ public class Gameplay : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.Keypad1))
             {
-                SwitchCouleurTexteSelection(phases_[2].GetComponent<Mosaique>().ReponseA);
+                SwitchCouleurTexteSelection(phases_[2].GetComponent<Mosaique>().reponse_a_);
             }
             if (Input.GetKeyDown(KeyCode.Keypad2))
             {
-                SwitchCouleurTexteSelection(phases_[2].GetComponent<Mosaique>().ReponseB);
+                SwitchCouleurTexteSelection(phases_[2].GetComponent<Mosaique>().reponse_b_);
             }
             if (Input.GetKeyDown(KeyCode.Keypad3))
             {
-                SwitchCouleurTexteSelection(phases_[2].GetComponent<Mosaique>().ReponseC);
+                SwitchCouleurTexteSelection(phases_[2].GetComponent<Mosaique>().reponse_c_);
             }
             if (Input.GetKeyDown(KeyCode.Keypad4))
             {
-                SwitchCouleurTexteSelection(phases_[2].GetComponent<Mosaique>().ReponseD);
+                SwitchCouleurTexteSelection(phases_[2].GetComponent<Mosaique>().reponse_d_);
             }
             if (Input.GetKeyDown(KeyCode.KeypadPlus))
             {
@@ -305,7 +305,7 @@ public class Gameplay : MonoBehaviour {
             
             if(Input.GetKeyDown(KeyCode.Space))
             {
-                mosaique_[phases_[2].GetComponent<Mosaique>().QChoisie].GetComponent<Image>().color = new Vector4(0.5f, 0.5f, 0.5f, 0f);
+                mosaique_[phases_[2].GetComponent<Mosaique>().question_choisie_].GetComponent<Image>().color = new Vector4(0.5f, 0.5f, 0.5f, 0f);
                 phases_[2].GetComponent<Animation>().Play("RetirerTout");
                 phases_[1].GetComponent<Animation>().Play("AfficherImagesMosaique");
                 ChangementBord();
@@ -316,22 +316,22 @@ public class Gameplay : MonoBehaviour {
 
     private void AffichageBonneRep()
     {
-        int[] bonne_reponse = phases_[2].GetComponent<Mosaique>().Rep; // numéro(s) de la (des) bonne(s) réponse(s)
+        int[] bonne_reponse = phases_[2].GetComponent<Mosaique>().rep_; // numéro(s) de la (des) bonne(s) réponse(s)
         for (int i = 0; i < bonne_reponse.Length; i++)
         {
             switch (bonne_reponse[0])
             {
                 case 0:
-                    phases_[2].GetComponent<Mosaique>().ReponseA.color = Color.green;
+                    phases_[2].GetComponent<Mosaique>().reponse_a_.color = Color.green;
                     break;
                 case 1:
-                    phases_[2].GetComponent<Mosaique>().ReponseB.color = Color.green;
+                    phases_[2].GetComponent<Mosaique>().reponse_b_.color = Color.green;
                     break;
                 case 2:
-                    phases_[2].GetComponent<Mosaique>().ReponseC.color = Color.green;
+                    phases_[2].GetComponent<Mosaique>().reponse_c_.color = Color.green;
                     break;
                 case 3:
-                    phases_[2].GetComponent<Mosaique>().ReponseD.color = Color.green;
+                    phases_[2].GetComponent<Mosaique>().reponse_d_.color = Color.green;
                     break;
             }
         }
@@ -352,7 +352,7 @@ public class Gameplay : MonoBehaviour {
     }
 
     /// <summary>
-    /// gère les input quand la mosaïque est affichée
+    /// Gère les inputs quand la mosaïque est affichée.
     /// </summary>
     private void GestionInputMosaiqueAff()
     {
@@ -410,26 +410,26 @@ public class Gameplay : MonoBehaviour {
 
 
     /// <summary>
-    /// enregistre toutes les informations sur la question.
+    /// Enregistre toutes les informations sur la question.
     /// </summary>
-    /// <param name="Q"></param>
-    private void EnregistrementQuestionMomo(int Q)
+    /// <param name="question">Numéro de la question choisie.</param>
+    private void EnregistrementQuestionMomo(int question)
     {
-        phases_[2].GetComponent<Mosaique>().image = mosaique_[Q].GetComponent<Image>();
-        phases_[2].GetComponent<Mosaique>().Question.text = mosaique_[Q].GetComponent<Question>().question;
-        phases_[2].GetComponent<Mosaique>().ReponseA.text = mosaique_[Q].GetComponent<Question>().propositions[0];
-        phases_[2].GetComponent<Mosaique>().ReponseB.text = mosaique_[Q].GetComponent<Question>().propositions[1];
-        phases_[2].GetComponent<Mosaique>().ReponseC.text = mosaique_[Q].GetComponent<Question>().propositions[2];
-        phases_[2].GetComponent<Mosaique>().ReponseD.text = mosaique_[Q].GetComponent<Question>().propositions[3];
-        phases_[2].GetComponent<Mosaique>().Rep = mosaique_[Q].GetComponent<Question>().réponse;
+        phases_[2].GetComponent<Mosaique>().image_ = mosaique_[question].GetComponent<Image>();
+        phases_[2].GetComponent<Mosaique>().question_.text = mosaique_[question].GetComponent<Question>().question;
+        phases_[2].GetComponent<Mosaique>().reponse_a_.text = mosaique_[question].GetComponent<Question>().propositions[0];
+        phases_[2].GetComponent<Mosaique>().reponse_b_.text = mosaique_[question].GetComponent<Question>().propositions[1];
+        phases_[2].GetComponent<Mosaique>().reponse_c_.text = mosaique_[question].GetComponent<Question>().propositions[2];
+        phases_[2].GetComponent<Mosaique>().reponse_d_.text = mosaique_[question].GetComponent<Question>().propositions[3];
+        phases_[2].GetComponent<Mosaique>().rep_ = mosaique_[question].GetComponent<Question>().réponse;
         validation_ = 1;
-        phases_[2].GetComponent<Mosaique>().QChoisie = Q;
+        phases_[2].GetComponent<Mosaique>().question_choisie_ = question;
         phases_[1].GetComponent<Animation>().Play("RetirerImagesMosaique");
         phases_[2].GetComponent<Animation>().Play("AfficherIQ");
     }
 
     /// <summary>
-    /// Gère l'apparition et la disparition des scores
+    /// Gère l'apparition et la disparition des scores.
     /// </summary>
     private void GestionOverlayScore()
     {
@@ -447,7 +447,7 @@ public class Gameplay : MonoBehaviour {
     }
 
     /// <summary>
-    /// Fonction gérant la disparition de l'affichage lorsque que l'on souhaite afficher les scores
+    /// Fonction gérant la disparition de l'affichage lorsque que l'on souhaite afficher les scores.
     /// </summary>
     private void SwitchRetirer()
     {
@@ -474,13 +474,13 @@ public class Gameplay : MonoBehaviour {
                 }
                 break;
             case 3:
-                phases_[3].GetComponent<Cineclub>().GestionAffichage(false);
+                phases_[3].GetComponent<CineClub>().GestionAffichage(false);
                 break;
         }
     }
 
     /// <summary>
-    /// Fonction gérant l'aparition de l'affichage lorsque que l'on souhaite revenir au jeu
+    /// Fonction gérant l'apparition de l'affichage lorsque que l'on souhaite revenir au jeu.
     /// </summary>
     private void SwitchAfficher()
     {
@@ -507,7 +507,7 @@ public class Gameplay : MonoBehaviour {
                 }
                 break;
             case 3:
-                phases_[3].GetComponent<Cineclub>().GestionAffichage(true);
+                phases_[3].GetComponent<CineClub>().GestionAffichage(true);
                 break;
         }
     }
@@ -545,12 +545,13 @@ public class Gameplay : MonoBehaviour {
     }
 
     /// <summary>
-    /// Gère le changement de bordure une fois le TOS fait
+    /// Gère le changement de bordure une fois le TOS fait.
     /// </summary>
-    /// <param name="désactiver">Vraie Si l'on veut arréter d'aaficher le bord</param>
-    private void ChangementBord(bool désactiver)
+    /// <param name="desactiver">Booléen, true si l'on veut arrêter d'afficher le bord,
+    /// false sinon.</param>
+    private void ChangementBord(bool desactiver = false)
     {
-        if(!désactiver)
+        if(!desactiver)
         {
             if (!main_equipe_bleue_)
             {
@@ -567,7 +568,7 @@ public class Gameplay : MonoBehaviour {
                 return;
             }
         }
-        if (désactiver)
+        if (desactiver)
         {
             if (!main_equipe_bleue_)
             {
@@ -583,14 +584,6 @@ public class Gameplay : MonoBehaviour {
             }
         }
 
-    }
-
-    /// <summary>
-    /// surcharge de la flemme
-    /// </summary>
-    private void ChangementBord()
-    {
-        ChangementBord(false);
     }
 
     #endregion

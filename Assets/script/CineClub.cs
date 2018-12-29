@@ -3,17 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Cineclub : MonoBehaviour {
+public class CineClub : MonoBehaviour {
 
-    public Text Proposition1;
-    public Text Proposition2;
-    public Text LesDeux;
-    private int etape = 0;
+    public Text proposition1_;
+    public Text proposition2_;
+    public Text les_deux_;
+    private int etape_ = 0;
+
+    public int Etape_
+    {
+        get
+        {
+            return etape_;
+        }
+    }
 
     /// <summary>
     /// Compte le nombre de sel ou poivre à faire
     /// </summary>
-    private int Compte = 0;
+    private int compte_ = 0;
 
 
     /// <summary>
@@ -21,37 +29,32 @@ public class Cineclub : MonoBehaviour {
     /// </summary>
     public void MAJTexte()
     {
-        if (Compte < GetComponent<Transform>().childCount)
+        if (compte_ < GetComponent<Transform>().childCount)
         {
-            Proposition1.text = GetComponent<Transform>().GetChild(Compte).GetComponent<SelPoivre>().Proposition1;            
-            if (GetComponent<Transform>().GetChild(Compte).GetComponent<SelPoivre>().LesDeux)
+            proposition1_.text = GetComponent<Transform>().GetChild(compte_).GetComponent<SelPoivre>().Proposition1;            
+            if (GetComponent<Transform>().GetChild(compte_).GetComponent<SelPoivre>().LesDeux)
             {
-                Proposition2.text = GetComponent<Transform>().GetChild(Compte).GetComponent<SelPoivre>().Proposition2;
-                LesDeux.text = "ou les deux ?";
+                proposition2_.text = GetComponent<Transform>().GetChild(compte_).GetComponent<SelPoivre>().Proposition2;
+                les_deux_.text = "ou les deux ?";
                 return;
             }
             else
             {
-                Proposition2.text ="ou " + GetComponent<Transform>().GetChild(Compte).GetComponent<SelPoivre>().Proposition2 + " ?";
-                LesDeux.text = "";
+                proposition2_.text ="ou " + GetComponent<Transform>().GetChild(compte_).GetComponent<SelPoivre>().Proposition2 + " ?";
+                les_deux_.text = "";
             }
         }
     }
 
-    public int getetape()
-    {
-        return etape;
-    }
-
     public void CinéClub()
     {
-        if (etape ==0)
+        if (etape_ ==0)
         {
             if(Input.GetKeyDown(KeyCode.M))
             {
-                Debug.Log(etape);
+                Debug.Log(etape_);
                 MAJTexte();
-                etape = 1;
+                etape_ = 1;
                 AffichageTheme(true);
                 return;
             }
@@ -67,40 +70,40 @@ public class Cineclub : MonoBehaviour {
                 }
             }
         }
-        if (etape == 1)
+        if (etape_ == 1)
         {
             if (Input.GetKeyDown(KeyCode.M))
             {
-                Debug.Log(etape);
-                etape = 0;
+                Debug.Log(etape_);
+                etape_ = 0;
                 AffichageTheme(false);
-                Compte += 1;
+                compte_ += 1;
             }
         }
     }
 
     public void ResetCompte()
     {
-        Compte = 0;
+        compte_ = 0;
     }
 
     public void AddCompte()
     {
-        Compte += 1;
+        compte_ += 1;
     }
 
     public void SubCompte()
     {
-        Compte -= 1;
+        compte_ -= 1;
     }
 
     /// <summary>
     /// Afficher ou retirer "CinéClub"
     /// </summary>
-    /// <param name="oui">true : afficher // false : retirer</param>
-    public void AffichageTitre(bool oui)
+    /// <param name="afficher">true : afficher // false : retirer</param>
+    public void AffichageTitre(bool afficher)
     {
-        if (oui)
+        if (afficher)
         {
             GetComponent<Transform>().GetComponentInParent<Animation>().Play("AfficherCC");
             return;
@@ -113,12 +116,12 @@ public class Cineclub : MonoBehaviour {
     }
 
     /// <summary>
-    /// Afficher ou retirer les theme
+    /// Afficher ou retirer les thèmes
     /// </summary>
-    /// <param name="oui">true : afficher // false : retirer</param>
-    public void AffichageTheme(bool oui)
+    /// <param name="afficher">true : afficher // false : retirer</param>
+    public void AffichageTheme(bool afficher)
     {
-        if (oui)
+        if (afficher)
         {
             GetComponent<Transform>().GetComponentInParent<Animation>().Play("AfficherTheme");
             return;
@@ -133,10 +136,10 @@ public class Cineclub : MonoBehaviour {
     /// <summary>
     /// Afficher ou retirer tout 
     /// </summary>
-    /// <param name="oui">true : afficher // false : retirer</param>
-    public void Affichagetout(bool oui)
+    /// <param name="afficher">true : afficher // false : retirer</param>
+    public void Affichagetout(bool afficher)
     {
-        if (oui)
+        if (afficher)
         {
             GetComponent<Transform>().GetComponentInParent<Animation>().Play("AfficherTout");
             return;
@@ -150,7 +153,7 @@ public class Cineclub : MonoBehaviour {
 
     public void GestionAffichage(bool oui)
     {
-        switch(etape)
+        switch(etape_)
         {
             case 0:
                 AffichageTitre(oui);
