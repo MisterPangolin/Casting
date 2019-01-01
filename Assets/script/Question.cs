@@ -19,6 +19,8 @@ public class Question : MonoBehaviour {
     // entier correspondant à la référence de la bonne réponse dans le tableau de bonnes réponses
     public int[] réponse;
 
+    public bool prop;
+
     // constructeur par défaut
     Question()
     {

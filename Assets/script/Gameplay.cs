@@ -112,9 +112,18 @@ public class Gameplay : MonoBehaviour {
         if(Phase == 4)
         {
             Phases[3].GetComponent<Cineclub>().GestionAffichage(false);
+            Phases[4].GetComponent<Animation>().Play("AfficherAl'AFf");
+        }
+        if(Phase == 2)
+        {
+            Phases[3].GetComponent<Cineclub>().GestionAffichage(false);
+            Phases[1].GetComponent<Animation>().Play("AfficherImagesMosaique");
         }
     }
 
+    /// <summary>
+    /// Gestion de la première équipe qui a buzzé
+    /// </summary>
     private void PrendreMainCineClub()
     {
         if (Phases[3].GetComponent<Cineclub>().getetape() == 1)
