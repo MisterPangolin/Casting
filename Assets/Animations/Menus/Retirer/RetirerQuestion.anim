@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: RetirerNomMenu
+  m_Name: RetirerQuestion
   serializedVersion: 6
   m_Legacy: 1
   m_Compressed: 0
@@ -41,7 +41,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.a
-    path: TitreMenu/AffichageTitreMenu
+    path: TitreMenu/AffichageQuestionMenu
     classID: 114
     script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_PPtrCurves: []
@@ -99,7 +99,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Color.a
-    path: TitreMenu/AffichageTitreMenu
+    path: TitreMenu/AffichageQuestionMenu
     classID: 114
     script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_EulerEditorCurves: []

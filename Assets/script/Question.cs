@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 /// <summary>
@@ -70,5 +71,19 @@ public class Question : MonoBehaviour {
             propositions[i] = "réponse " + i;
         }
         réponse = _réponse;
+    }
+
+    public static void PassageJaunePolice(Text pouet)
+    {
+        if (pouet.color == Color.yellow)
+        {
+            pouet.color = Color.white;
+            return;
+        }
+        else
+        {
+            pouet.color = Color.yellow;
+            return;
+        }
     }
 }

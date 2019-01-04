@@ -277,19 +277,19 @@ public class Gameplay : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.Keypad1))
             {
-                PassageRougePolice(Phases[2].GetComponent<Momo>().ReponseA);
+                Question.PassageJaunePolice(Phases[2].GetComponent<Momo>().ReponseA);
             }
             if (Input.GetKeyDown(KeyCode.Keypad2))
             {
-                PassageRougePolice(Phases[2].GetComponent<Momo>().ReponseB);
+                Question.PassageJaunePolice(Phases[2].GetComponent<Momo>().ReponseB);
             }
             if (Input.GetKeyDown(KeyCode.Keypad3))
             {
-                PassageRougePolice(Phases[2].GetComponent<Momo>().ReponseC);
+                Question.PassageJaunePolice(Phases[2].GetComponent<Momo>().ReponseC);
             }
             if (Input.GetKeyDown(KeyCode.Keypad4))
             {
-                PassageRougePolice(Phases[2].GetComponent<Momo>().ReponseD);
+                Question.PassageJaunePolice(Phases[2].GetComponent<Momo>().ReponseD);
             }
             if (Input.GetKeyDown(KeyCode.KeypadPlus))
             {
@@ -334,19 +334,6 @@ public class Gameplay : MonoBehaviour {
         }
     }
 
-    private void PassageRougePolice(Text pouet )
-    {
-        if(pouet.color == Color.yellow)
-        {
-            pouet.color = Color.white;
-            return;
-        }
-        else
-        {
-            pouet.color = Color.yellow;
-            return;
-        }
-    }
 
     /// <summary>
     /// gère les input quand la mosaïque est affichée

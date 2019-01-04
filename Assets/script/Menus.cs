@@ -8,7 +8,7 @@ public class Menus : MonoBehaviour {
     public GameObject[] Menu;
 
     public Text Titre;
-    public Text Question;
+    public Text Questions;
     public Text Propostion1;
     public Text Propostion2;
     public Text Propostion3;
@@ -16,6 +16,13 @@ public class Menus : MonoBehaviour {
 
     private int etape = 0;
     private int menuChoisi = 0;
+    private int QuestActuelle = 0;
+
+    private int QuestionActuelle;
+
+    /// <summary>
+    /// fonction gérant la partie des menus
+    /// </summary>
     public void Affiche()
     {
         switch (etape)
@@ -72,10 +79,105 @@ public class Menus : MonoBehaviour {
                 }
                 if (Input.GetKeyDown(KeyCode.M))
                 {
-                    etape = 3;
-                    Menu[menuChoisi].GetComponent<Text>().color = Color.gray;
                     GetComponent<Animation>().Play("AfficherNomMenu");
                     etape = 5;
+                }
+                break;
+            case 5:
+                if (Input.GetKeyDown(KeyCode.Backspace))
+                {
+                    GetComponent<Animation>().Play("AfficherTout");
+                    etape = 3;
+                }
+                if (Input.GetKeyDown(KeyCode.M))
+                {
+                    Menu[menuChoisi].GetComponent<Text>().color = Color.gray;
+                    GetComponent<Animation>().Play("AfficherNomMenu");
+                    etape = 6;
+                }
+                break;
+            case 6:
+                if (Input.GetKeyDown(KeyCode.M))
+                {
+                    if(QuestActuelle < Menu[menuChoisi].transform.childCount)
+                    {
+                        if(Menu[menuChoisi].transform.GetChild(QuestActuelle).GetComponent<Question>().prop)
+                        {
+                            Questions.text = Menu[menuChoisi].transform.GetChild(QuestActuelle).GetComponent<Question>().question;
+                            Propostion1.text = Menu[menuChoisi].transform.GetChild(QuestActuelle).GetComponent<Question>().propositions[0];
+                            Propostion2.text = Menu[menuChoisi].transform.GetChild(QuestActuelle).GetComponent<Question>().propositions[1];
+                            Propostion3.text = Menu[menuChoisi].transform.GetChild(QuestActuelle).GetComponent<Question>().propositions[2];
+                            Propostion4.text = Menu[menuChoisi].transform.GetChild(QuestActuelle).GetComponent<Question>().propositions[3];
+                            Propostion4.color = Color.white;
+                            Propostion3.color = Color.white;
+                            Propostion2.color = Color.white;
+                            Propostion1.color = Color.white;
+                            Questions.gameObject.GetComponent<RectTransform>().localPosition = new Vector3(Questions.gameObject.GetComponent<RectTransform>().position.x, -0.3f, Questions.gameObject.GetComponent<RectTransform>().position.z);
+                            etape = 8;
+                            GetComponent<Animation>().Play("AfficherQuestion");
+                        }
+                        if (!Menu[menuChoisi].transform.GetChild(QuestActuelle).GetComponent<Question>().prop)
+                        {
+                            Questions.text = Menu[menuChoisi].transform.GetChild(QuestActuelle).GetComponent<Question>().question;
+                            Questions.gameObject.GetComponent<RectTransform>().localPosition = new Vector3(Questions.gameObject.GetComponent<RectTransform>().position.x, -76.15f, Questions.gameObject.GetComponent<RectTransform>().position.z);
+                            etape = 7;
+                            GetComponent<Animation>().Play("AfficherQuestion");
+                        }
+                    }
+                }
+                break;
+            case 7:
+                if (Input.GetKeyDown(KeyCode.L))
+                {
+                    GetComponent<Animation>().Play("RetirerQuestion");
+                    etape = 6;
+                    QuestActuelle += 1;
+                }
+                break;
+            case 8:
+                if (Input.GetKeyDown(KeyCode.L))
+                {
+                    GetComponent<Animation>().Play("AfficherQ1");
+                    etape = 9;
+                }
+                break;
+            case 9:
+                if (Input.GetKeyDown(KeyCode.L))
+                {
+                    GetComponent<Animation>().Play("AfficherQ2");
+                    etape = 10;
+                }
+                break;
+            case 10:
+                if (Input.GetKeyDown(KeyCode.L))
+                {
+                    GetComponent<Animation>().Play("AfficherQ3");
+                    etape = 11;
+                }
+                break;
+            case 11:
+                if (Input.GetKeyDown(KeyCode.L))
+                {
+                    GetComponent<Animation>().Play("AfficherQ4");
+                    etape = 12;
+                }
+                break;
+            case 12:
+                if (Input.GetKeyDown(KeyCode.Keypad1))
+                {
+                    Question.PassageJaunePolice(Propostion1);
+                }
+                if (Input.GetKeyDown(KeyCode.Keypad2))
+                {
+                    Question.PassageJaunePolice(Propostion2);
+                }
+                if (Input.GetKeyDown(KeyCode.Keypad3))
+                {
+                    Question.PassageJaunePolice(Propostion3);
+                }
+                if (Input.GetKeyDown(KeyCode.Keypad4))
+                {
+                    Question.PassageJaunePolice(Propostion4);
                 }
                 break;
         }
@@ -91,6 +193,15 @@ public class Menus : MonoBehaviour {
             case 3:
                 GetComponent<Animation>().Play("AfficherToutMenus");
                 break;
+            case 5:
+                GetComponent<Animation>().Play("AfficherNomMenu");
+                break;
+            case 6:
+                GetComponent<Animation>().Play("AfficherQuestionetMenuPouet");
+                break;
+            case 7:
+                GetComponent<Animation>().Play("AfficherQuestionetMenuPouet");
+                break;
         }
     }
 
@@ -104,6 +215,29 @@ public class Menus : MonoBehaviour {
             case 3:
                 GetComponent<Animation>().Play("RetirerToutMenus");
                 break;
+            case 5:
+                GetComponent<Animation>().Play("RetirerNomMenu");
+                break;
+            case 6:
+                GetComponent<Animation>().Play("RetirerQuestionetMenu");
+                break;
+            case 7:
+                GetComponent<Animation>().Play("RetirerQuestionetMenu");
+                break;
+        }
+    }
+
+    private void PassageJaunePolice(Text pouet)
+    {
+        if (pouet.color == Color.yellow)
+        {
+            pouet.color = Color.white;
+            return;
+        }
+        else
+        {
+            pouet.color = Color.yellow;
+            return;
         }
     }
 }
