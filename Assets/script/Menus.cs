@@ -124,6 +124,12 @@ public class Menus : MonoBehaviour {
                             GetComponent<Animation>().Play("AfficherQuestion");
                         }
                     }
+                    if (QuestActuelle >= Menu[menuChoisi].transform.childCount)
+                    {
+                        GetComponent<Animation>().Play("RetirerNomMenu");
+                        etape = 14;
+                    }
+
                 }
                 break;
             case 7:
@@ -177,12 +183,51 @@ public class Menus : MonoBehaviour {
                 }
                 if (Input.GetKeyDown(KeyCode.Keypad4))
                 {
-                    Question.PassageJaunePolice(Propostion4);
+                    Question.PassageJaunePolice(Propostion4 );
                 }
+                if (Input.GetKeyDown(KeyCode.KeypadPlus))
+                {
+                    AfficherBonneRep();
+                    etape = 13;
+                }
+                break;
+            case 13:
+                if (Input.GetKeyDown(KeyCode.L))
+                {
+                    GetComponent<Animation>().Play("RetirerQ");
+                    etape = 6;
+                    QuestActuelle += 1;
+                }
+                break;
+            case 14:
+                GetComponent<Animation>().Play("AfficherTout");
+                etape = 3;
+                GameObject.Find("Gameplay").GetComponent<Gameplay>().ChangementBord();
                 break;
         }
     }
 
+    private void AfficherBonneRep()
+    {
+        for (int i = 0; i < Menu[menuChoisi].transform.GetChild(QuestActuelle).GetComponent<Question>().réponse.Length; i++)
+        {
+            switch (Menu[menuChoisi].transform.GetChild(QuestActuelle).GetComponent<Question>().réponse[i])
+            {
+                case 1:
+                    Propostion1.color = Color.green;
+                    break;
+                case 2:
+                    Propostion2.color = Color.green;
+                    break;
+                case 3:
+                    Propostion3.color = Color.green;
+                    break;
+                case 4:
+                    Propostion4.color = Color.green;
+                    break;
+            }
+        }
+    }
     public void GestionAfficher()
     {
         switch(etape)
@@ -201,6 +246,12 @@ public class Menus : MonoBehaviour {
                 break;
             case 7:
                 GetComponent<Animation>().Play("AfficherQuestionetMenuPouet");
+                break;
+            case 12:
+                GetComponent<Animation>().Play("AfficherToutQuestionetMenu");
+                break;
+            case 13:
+                GetComponent<Animation>().Play("AfficherToutQuestionetMenu");
                 break;
         }
     }
@@ -223,6 +274,12 @@ public class Menus : MonoBehaviour {
                 break;
             case 7:
                 GetComponent<Animation>().Play("RetirerQuestionetMenu");
+                break;
+            case 12:
+                GetComponent<Animation>().Play("RetirerToutQuestionetMenu");
+                break;
+            case 13:
+                GetComponent<Animation>().Play("RetirerToutQuestionetMenu");
                 break;
         }
     }

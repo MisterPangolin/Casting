@@ -102,6 +102,20 @@ public class Gameplay : MonoBehaviour {
                 Phases[3].GetComponent<Cineclub>().CinéClub();
                 PrendreMainCineClub();
                 break;
+            case 4:
+                if (!MainEquipeBleue)
+                {
+                    AfficherBord(BordR);
+                }
+                else
+                {
+                    AfficherBord(BordB);
+                }
+                Phase = 5;
+                break;
+            case 5:
+                Phases[4].GetComponent<Menus>().Affiche();
+                break;
         }
         InputScore();
     }
@@ -243,7 +257,6 @@ public class Gameplay : MonoBehaviour {
             {
                 Phases[1].GetComponent<Animation>().Play("RetirerImagesMosaique");
                 Phases[0].GetComponent<Animation>().Play("AfficherTOS");
-                ChangementBord(true);
             }
             return;
         }
@@ -318,16 +331,16 @@ public class Gameplay : MonoBehaviour {
         {
             switch (bR[0])
             {
-                case 0:
+                case 1:
                     Phases[2].GetComponent<Momo>().ReponseA.color = Color.green;
                     break;
-                case 1:
+                case 2:
                     Phases[2].GetComponent<Momo>().ReponseB.color = Color.green;
                     break;
-                case 2:
+                case 3:
                     Phases[2].GetComponent<Momo>().ReponseC.color = Color.green;
                     break;
-                case 3:
+                case 4:
                     Phases[2].GetComponent<Momo>().ReponseD.color = Color.green;
                     break;
             }
@@ -572,7 +585,7 @@ public class Gameplay : MonoBehaviour {
     /// <summary>
     /// surcharge de la flemme
     /// </summary>
-    private void ChangementBord()
+    public void ChangementBord()
     {
         ChangementBord(false);
     }
