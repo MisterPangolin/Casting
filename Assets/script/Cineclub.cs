@@ -105,7 +105,7 @@ public class Cineclub : MonoBehaviour {
             GetComponent<Transform>().GetComponentInParent<Animation>().Play("AfficherCC");
             return;
         }
-        else
+        if (oui == false)
         {
             GetComponent<Transform>().GetComponentInParent<Animation>().Play("RetirerCC");
             return;

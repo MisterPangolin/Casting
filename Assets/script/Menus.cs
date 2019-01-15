@@ -51,7 +51,7 @@ public class Menus : MonoBehaviour {
             case 3:
                 if (Input.GetKeyDown(KeyCode.Keypad1))
                 {
-                    GetComponent<Animation>().Play("RetirerTout");
+                    GetComponent<Animation>().Play("RetirerToutMenus");
                     Titre = Menu[0].GetComponent<Text>();
                     menuChoisi = 0;
                     etape = 4;

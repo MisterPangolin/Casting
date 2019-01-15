@@ -58,6 +58,7 @@ public class Gameplay : MonoBehaviour {
     /// Faux : Main à l'équpe R
     /// </summary>
     private bool MainEquipeBleue;
+    private bool MainEquipeBleueTampon;
 
     /// <summary>
     /// liste des canevas de chaques phases
@@ -103,6 +104,7 @@ public class Gameplay : MonoBehaviour {
                 PrendreMainCineClub();
                 break;
             case 4:
+                MainEquipeBleue = MainEquipeBleueTampon;
                 if (!MainEquipeBleue)
                 {
                     AfficherBord(BordR);
@@ -115,6 +117,10 @@ public class Gameplay : MonoBehaviour {
                 break;
             case 5:
                 Phases[4].GetComponent<Menus>().Affiche();
+                if(Phase == 6)
+                {
+                    GestionOverlayScore();
+                }
                 break;
         }
         InputScore();
@@ -222,12 +228,14 @@ public class Gameplay : MonoBehaviour {
                 AfficherBord(BordB);
                 RetirerBord(BordR);
                 MainEquipeBleue = true;
+                MainEquipeBleueTampon = true;
             }
             if (Input.GetKeyDown(KeyCode.N) && Input.GetKey(KeyCode.M))
             {
                 AfficherBord(BordR);
                 RetirerBord(BordB);
                 MainEquipeBleue = false;
+                MainEquipeBleueTampon = false;
             }
             if(Phase == 2)
             {
@@ -329,18 +337,18 @@ public class Gameplay : MonoBehaviour {
         int[] bR = Phases[2].GetComponent<Momo>().Rep;
         for (int i = 0; i < bR.Length; i++)
         {
-            switch (bR[0])
+            switch (bR[i])
             {
-                case 1:
+                case 0:
                     Phases[2].GetComponent<Momo>().ReponseA.color = Color.green;
                     break;
-                case 2:
+                case 1:
                     Phases[2].GetComponent<Momo>().ReponseB.color = Color.green;
                     break;
-                case 3:
+                case 2:
                     Phases[2].GetComponent<Momo>().ReponseC.color = Color.green;
                     break;
-                case 4:
+                case 3:
                     Phases[2].GetComponent<Momo>().ReponseD.color = Color.green;
                     break;
             }
@@ -473,6 +481,9 @@ public class Gameplay : MonoBehaviour {
             case 3:
                 Phases[3].GetComponent<Cineclub>().GestionAffichage(false);
                 break;
+            case 5:
+                Phases[4].GetComponent<Menus>().GestionRetirerAff();
+                break;
         }
     }
 
@@ -505,6 +516,9 @@ public class Gameplay : MonoBehaviour {
                 break;
             case 3:
                 Phases[3].GetComponent<Cineclub>().GestionAffichage(true);
+                break;
+            case 5:
+                Phases[4].GetComponent<Menus>().GestionAfficher();
                 break;
         }
     }
