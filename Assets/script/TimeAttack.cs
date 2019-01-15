@@ -63,9 +63,24 @@ public class TimeAttack : MonoBehaviour {
                 break;
             case 1:
                 GestionRebourd();
+                if(End)
+                {
+                    etape = 4;
+                }
                 break;
+            case 4:
+                if (MainB != MainBTampon)
+                {
+                    AfficherVainqueur(MainB);
+                }
+                    break;
         }
         MAJAffichage();
+    }
+
+    private void AfficherVainqueur(bool win)
+    {
+
     }
 
     private void GestionRebourd()
@@ -82,7 +97,7 @@ public class TimeAttack : MonoBehaviour {
             }
             if(!Pause)
             {
-                Rebourd(_minutesBleue, _secondesBleue);
+                End = Rebourd(_minutesBleue, _secondesBleue);
             }
         }
     }
