@@ -120,8 +120,13 @@ public class Gameplay : MonoBehaviour {
                 if(Phase == 6)
                 {
                     GestionOverlayScore();
+                    Phases[5].GetComponent<TimeAttack>().SetMainTampon(MainEquipeBleueTampon);
                 }
                 break;
+            case 6:
+                Phases[5].GetComponent<TimeAttack>().TA();
+                break;
+
         }
         InputScore();
     }

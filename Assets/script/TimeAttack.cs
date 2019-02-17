@@ -23,6 +23,8 @@ public class TimeAttack : MonoBehaviour {
     public Text SecondesDBleue;
     public Text SecondesUBleue;
 
+    public Text victoire;
+
     private int _minutesRouge;
     private int _minutesBleue;
     private int _secondesRouge;
@@ -56,12 +58,17 @@ public class TimeAttack : MonoBehaviour {
         switch(etape)
         {
             case 0:
-                HighScore();
                 etape = 1;
                 SetUp();
-                GetComponent<Animation>().Play("Lancement");
+                GetComponent<Animation>().Play("Affichage");
                 break;
-            case 1:
+            case 2:
+                if(Input.GetKeyDown(KeyCode.Space))
+                {
+                    HighScore();
+                }
+                break;
+            case 3:
                 GestionRebourd();
                 if(End)
                 {
@@ -77,7 +84,10 @@ public class TimeAttack : MonoBehaviour {
         }
         MAJAffichage();
     }
-
+    public void SetMainTampon( bool pouet)
+    {
+        MainBTampon = pouet;
+    }
     private void AfficherVainqueur(bool win)
     {
 
@@ -97,6 +107,11 @@ public class TimeAttack : MonoBehaviour {
             }
             if(!Pause)
             {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    Pause = true;
+                    return;
+                }
                 End = Rebourd(_minutesBleue, _secondesBleue);
             }
         }
@@ -127,6 +142,18 @@ public class TimeAttack : MonoBehaviour {
         if(scoreRo > scoreBl)
         {
             MainB = false;
+        }
+        if(scoreBl == scoreRo)
+        {
+            MainB = MainBTampon;
+        }
+        if(MainB == true)
+        {
+            GetComponent<Animation>().Play("bordB");
+        }
+        if(MainB == false)
+        {
+            GetComponent<Animation>().Play("bordR");
         }
     }
 
