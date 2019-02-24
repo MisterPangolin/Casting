@@ -117,16 +117,18 @@ public class Gameplay : MonoBehaviour {
                 break;
             case 5:
                 Phases[4].GetComponent<Menus>().Affiche();
-                if(Phase == 6)
+                ChangementPhases();
+                if (Phase == 6)
                 {
+                    Phases[4].GetComponent<Animation>().Play("RetirerToutMenus");
                     GestionOverlayScore();
                     Phases[5].GetComponent<TimeAttack>().SetMainTampon(MainEquipeBleueTampon);
+                    Phases[5].GetComponent<TimeAttack>().ReadScore(AffichagePointB.GetScore(), AffichagePointR.GetScore());
                 }
                 break;
             case 6:
                 Phases[5].GetComponent<TimeAttack>().TA();
                 break;
-
         }
         InputScore();
     }
@@ -425,7 +427,7 @@ public class Gameplay : MonoBehaviour {
     /// <param name="Q"></param>
     private void EnregistrementQuestionMomo(int Q)
     {
-        Phases[2].GetComponent<Momo>().image = mosaïque[Q].GetComponent<Image>();
+        Phases[2].GetComponent<Momo>().image.overrideSprite = mosaïque[Q].GetComponent<Image>().sprite;
         Phases[2].GetComponent<Momo>().Question.text = mosaïque[Q].GetComponent<Question>().question;
         Phases[2].GetComponent<Momo>().ReponseA.text = mosaïque[Q].GetComponent<Question>().propositions[0];
         Phases[2].GetComponent<Momo>().ReponseB.text = mosaïque[Q].GetComponent<Question>().propositions[1];

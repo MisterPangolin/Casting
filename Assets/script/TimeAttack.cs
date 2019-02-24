@@ -23,6 +23,8 @@ public class TimeAttack : MonoBehaviour {
     public Text SecondesDBleue;
     public Text SecondesUBleue;
 
+    public Text fin;
+
     public Text victoire;
 
     private int _minutesRouge;
@@ -52,21 +54,27 @@ public class TimeAttack : MonoBehaviour {
         _secondesRouge = 0;
     }
 
-    // Update is called once per frame
     public void TA()
     {
+        Debug.Log(etape);
         switch(etape)
         {
             case 0:
-                etape = 1;
                 SetUp();
-                GetComponent<Animation>().Play("Affichage");
+                etape = 1;
                 break;
-            case 2:
+            case 1:
                 if(Input.GetKeyDown(KeyCode.Space))
                 {
                     HighScore();
+                    GameObject.Find("Gameplay").GetComponent<Animation>().Play("RetirerScores");
+                    etape = 2;
                 }
+                break;
+
+            case 2:
+                GetComponent<Animation>().Play("Affichage");
+                etape = 3;
                 break;
             case 3:
                 GestionRebourd();
@@ -79,8 +87,66 @@ public class TimeAttack : MonoBehaviour {
                 if (MainB != MainBTampon)
                 {
                     AfficherVainqueur(MainB);
+                    etape = 5;
                 }
-                    break;
+                if (MainB == MainBTampon )
+                {
+                    if(MainB)
+                    {
+                        GetComponent<Animation>().Play("transitionBordBR");
+                    }
+                    if (!MainB)
+                    {
+                        GetComponent<Animation>().Play("transitionBordRB");
+                    }
+                    MainB = !MainB;
+                    Pause = true;
+                    etape = 6;
+                    End = false;
+                }
+                break;
+            case 5:
+                if (Input.GetKey(KeyCode.Space))
+                {
+                    fin.text = "Final Cut";
+                }
+                break;
+            case 6:
+                if (Input.GetKey(KeyCode.P))
+                {
+                    if(MainB)
+                    {
+                        fin.text = "Victoire Bleue";
+                        GetComponent<Animation>().Play("Vic");
+                        etape = 5;
+                    }
+                    if(!MainB)
+                    {
+                        fin.text = "Victoire Rouge";
+                        GetComponent<Animation>().Play("Vic");
+                        etape = 5;
+                    }
+                    GestionRebourd();
+                    if(End)
+                    {
+                        fin.text = "Focus";
+                        GetComponent<Animation>().Play("Vic");
+                        etape = 7;
+                    }
+                }
+                break;
+            case 7:
+                if (Input.GetKey(KeyCode.B))
+                {
+                    fin.text = "Victoire Bleue";
+                    etape = 5;
+                }
+                if (Input.GetKey(KeyCode.N))
+                {
+                    fin.text = "Victoire Rouge";
+                    etape = 5;
+                }
+                break;
         }
         MAJAffichage();
     }
@@ -90,29 +156,101 @@ public class TimeAttack : MonoBehaviour {
     }
     private void AfficherVainqueur(bool win)
     {
-
+        if(win == false)
+        {
+            fin.text = "Victoire Rouge";
+            GetComponent<Animation>().Play("VicR");
+        }
+        if (win == true)
+        {
+            fin.text = "Victoire Bleue";
+            GetComponent<Animation>().Play("VicB");
+        }
     }
 
     private void GestionRebourd()
     {
-        if(MainB)
+        if (Pause)
         {
-            if(Pause)
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                if(Input.GetKeyDown(KeyCode.Space))
+                Pause = false;
+                return;
+            }
+        }
+        if (!Pause)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Pause = true;
+                return;
+            }
+            if (MainB)
+            {
+                timer += Time.deltaTime;
+                if (timer >= 1f)
                 {
-                    Pause = false;
-                    return;
+                    if (_secondesBleue == 0)
+                    {
+                        if (_minutesBleue > 0)
+                        {
+                            _minutesBleue -= 1;
+                            _secondesBleue = 60;
+                            timer = 0;
+                            End = false;
+                        }
+                        if (_minutesBleue == 0)
+                        {
+                            End = true;
+                        }
+                    }
+                    if (_secondesBleue > 0)
+                    {
+                        _secondesBleue -= 1;
+                        timer = 0;
+                        End = false;
+                    }
                 }
             }
-            if(!Pause)
+            if (!MainB)
             {
-                if (Input.GetKeyDown(KeyCode.Space))
+                timer += Time.deltaTime;
+                if (timer >= 1f)
                 {
-                    Pause = true;
-                    return;
+                    if (_secondesRouge == 0)
+                    {
+                        if (_minutesRouge > 0)
+                        {
+                            _minutesRouge -= 1;
+                            _secondesRouge = 60;
+                            timer = 0;
+                            End = false;
+                        }
+                        if (_minutesRouge == 0)
+                        {
+                            End = true;
+                        }
+                    }
+                    if (_secondesRouge > 0)
+                    {
+                        _secondesRouge -= 1;
+                        timer = 0;
+                        End = false;
+                    }
                 }
-                End = Rebourd(_minutesBleue, _secondesBleue);
+            }
+        }
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            Pause = true;
+            MainB = !MainB;
+            if(MainB)
+            {
+                GetComponent<Animation>().Play("transitionBordRB");
+            }
+            if (!MainB)
+            {
+                GetComponent<Animation>().Play("transitionBordBR");
             }
         }
     }
@@ -158,36 +296,35 @@ public class TimeAttack : MonoBehaviour {
     }
 
     /// <summary>
-    /// transforme les scores en temps 
+    /// li le score
     /// </summary>
     /// <param name="_ScoreB">score equipe B</param>
     /// <param name="_ScoreR">score equipe R</param>
     public void ReadScore(int _ScoreB, int _ScoreR)
     {
-        int scoreB, scoreR;
-        scoreB = _ScoreB;
-        scoreR = _ScoreR;
+        scoreBl = _ScoreB;
+        scoreRo = _ScoreR;
     }
 
     private void SetUp()
     {
-        RecursifScore(scoreBl, _minutesBleue);
-        RecursifScore(scoreRo, _minutesRouge);
-        _secondesRouge = scoreRo;
-        _secondesBleue = scoreBl;
+        ScoreToTime(scoreBl,out _minutesBleue,out _secondesBleue);
+        ScoreToTime(scoreRo,out _minutesRouge,out _secondesRouge);
     }
 
-    private void RecursifScore(int _score, int minute)
+    private void ScoreToTime(int _score, out int _minute,out int _sec)
     {
+        _minute = 1;
         if (_score > 59)
         {
-            minute += 1;
+            _minute = _minute + 1;
             _score -= 60;
-            RecursifScore(_score, minute);
+            _sec = _score;
+            return;
         }
         else
         {
-            return;
+            _sec = _score;
         }
     }
 
@@ -199,33 +336,5 @@ public class TimeAttack : MonoBehaviour {
         SecondesURouge.text = "" + _secondesRouge%10;
         SecondesDBleue.text = "" + _secondesBleue / 10;
         SecondesUBleue.text = "" + _secondesBleue % 10;
-    }
-
-    private bool Rebourd(int minute, int seconde)
-    {
-        timer += Time.deltaTime;
-        if (timer >= 1f)
-        {
-            if(seconde == 0)
-            {
-                if(minute > 0)
-                {
-                    minute -= 1;
-                    timer = 0;
-                    return false;
-                }
-                if(minute ==0)
-                {
-                    return true;
-                }
-            }
-            if(seconde > 0)
-            {
-                seconde += 1;
-                timer = 0;
-                return false;
-            }
-        }
-        return false;
     }
 }

@@ -30,6 +30,11 @@ public class Points : MonoBehaviour {
         MajAffichageScore();
     }
 
+    public int GetScore()
+    {
+        return score;
+    }
+
     /// <summary>
     /// Fonction métant à jour les dizaines et unités
     /// </summary>
