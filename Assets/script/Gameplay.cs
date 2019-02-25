@@ -330,7 +330,7 @@ public class Gameplay : MonoBehaviour {
             
             if(Input.GetKeyDown(KeyCode.Space))
             {
-                mosaïque[Phases[2].GetComponent<Momo>().QChoisie].GetComponent<Image>().color = new Vector4(0.5f, 0.5f, 0.5f, 0f);
+                mosaïque[Phases[2].GetComponent<Momo>().QChoisie].GetComponent<Image>().color = new Vector4(0.8f, 0.5f, 0.5f, 0f);
                 Phases[2].GetComponent<Animation>().Play("RetirerTout");
                 Phases[1].GetComponent<Animation>().Play("AfficherImagesMosaique");
                 ChangementBord();

@@ -296,7 +296,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52.9, y: -31.7}
+  m_AnchoredPosition: {x: 60.32, y: -31.7}
   m_SizeDelta: {x: 298.2, y: 160.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &106942414
@@ -533,18 +533,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 55c1f72c6aecfc74d958b2f2bbae34fe, type: 3}
-    m_FontSize: 22
-    m_FontStyle: 0
+    m_FontSize: 0
+    m_FontStyle: 2
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 153
+    m_MaxSize: 300
     m_Alignment: 1
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 0.66
-  m_Text: Reponse 4
+    m_LineSpacing: 0.58
+  m_Text: Reponse 2
 --- !u!222 &172315780
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -637,12 +637,10 @@ MonoBehaviour:
     ?"
   nbProposition: 4
   propositions:
-  - "On peut y faire un tour de man\xE8ge enti\xE8rement constitu\xE9 de sel, parce
-    que les man\xE8ges, c\u2019est rigolo."
-  - "Des pioches sont \xE0 la disposition des visiteurs voulant ramener un souvenir."
-  - "Une clinique de sel y accueille une vingtaine de personnes, au cas o\xF9."
-  - "Des sculpteurs vous proposeront des tutoriels pour apprendre \xE0 sculpter votre
-    propre Julien LEPERS en sel."
+  - "On peut y faire un tour de man\xE8ge constitu\xE9 de sel"
+  - "Des pioches sont \xE0 la disposition des visiteurs"
+  - Une clinique y soigne des maladies respiratoires par le sel
+  - On peut y apprendre la sculpture sur sel
   "r\xE9ponse": 02000000
   prop: 0
 --- !u!1 &213522180
@@ -677,7 +675,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52.9, y: -137.3}
+  m_AnchoredPosition: {x: 60.32, y: -137.3}
   m_SizeDelta: {x: 298.2, y: 160.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &213522182
@@ -1172,9 +1170,9 @@ MonoBehaviour:
   nbProposition: 4
   propositions:
   - Monaco
-  - "R\xE9publique du Wadiya"
-  - Royaume des Tonga
-  - Grande Bretagne
+  - "La R\xE9publique du Wadiya"
+  - Le Royaume des Tonga
+  - La Grande-Bretagne
   "r\xE9ponse": 02000000
   prop: 0
 --- !u!1 &352812286
@@ -1258,16 +1256,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b51c9e945941c438de3c0ebef1ca4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  question: "Quelle proposition n\u2019est pas une proposition du Parti Rhinoc\xE9ros,
-    parti satirique canadien ?"
+  question: "Laquelle de ces propositions n'a pas \xE9t\xE9 avanc\xE9e par le Parti
+    Rhinoc\xE9ros, un parti satirique canadien ?"
   nbProposition: 4
   propositions:
-  - "Condamner les machines \xE0 laver lors d\u2019un flagrant d\xE9lit de vol de
-    chaussette."
-  - "R\xE9duire la vitesse de la lumi\xE8re, parce qu\u2019elle va beaucoup trop vite."
-  - "Mettre la dette canadienne sur une carte Visa, et la d\xE9clarer vol\xE9e par
-    la suite."
-  - "Offrir une goupille \xE0 l\u2019\xCEle de Grenade."
+  - "Condamner les machines \xE0 laver voleuses de chaussettes"
+  - "R\xE9duire la vitesse de la lumi\xE8re"
+  - Perdre la carte bancaire contenant la dette canadienne
+  - "Offrir une goupille \xE0 l\u2019\xCEle de Grenade"
   "r\xE9ponse": 00000000
   prop: 0
 --- !u!1001 &380046698
@@ -1332,12 +1328,12 @@ Prefab:
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: propositions.Array.data[1]
-      value: "Il emploie certains employ\xE9s pour jouer des sc\xE8nes de chasse"
+      value: "Il engage certains employ\xE9s pour jouer des sc\xE8nes de chasse"
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: propositions.Array.data[2]
-      value: "Il peut \xEAtre visitable en streaming"
+      value: "Il peut \xEAtre visit\xE9 en streaming"
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
@@ -1418,13 +1414,12 @@ Prefab:
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: propositions.Array.data[0]
-      value: "Il a chang\xE9 son nom pour celui d\u2019une marque  "
+      value: "Il a chang\xE9 son nom pour celui d\u2019une marque"
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: propositions.Array.data[1]
-      value: "En vendant \xE0 des publicitaires des pixels sur un site personnel \xE0
-        1$ le pixel "
+      value: "En vendant de l'espace sur un site personnel \xE0 1$ le pixel"
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
@@ -1435,8 +1430,8 @@ Prefab:
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: propositions.Array.data[3]
-      value: "Il a rejoint une \xE9cole qui n\u2019est pas payante, mais qui n\u2019est
-        pas gratuite"
+      value: "Il a int\xE9gr\xE9 une \xE9cole qui n\u2019est pas payante, mais qui
+        n\u2019est pas gratuite"
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
@@ -2290,12 +2285,12 @@ Prefab:
     - target: {fileID: 114947334780455580, guid: ac567434858310641a7ff2c3ed70142e,
         type: 2}
       propertyPath: Proposition1
-      value: Tuc
+      value: Tuc,
       objectReference: {fileID: 0}
     - target: {fileID: 114947334780455580, guid: ac567434858310641a7ff2c3ed70142e,
         type: 2}
       propertyPath: Proposition2
-      value: Un tuc
+      value: un tuc,
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac567434858310641a7ff2c3ed70142e, type: 2}
@@ -2432,7 +2427,7 @@ Prefab:
         type: 2}
       propertyPath: question
       value: "Qui pouvez-vous parfois rencontrer lors de la visite du mus\xE9e de
-        l\u2019Ermitage, \xE0 Saint-Petersbourg ?"
+        l\u2019Ermitage, \xE0 Saint-P\xE9tersbourg ?"
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
@@ -2598,12 +2593,12 @@ Prefab:
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: question
-      value: "Quelle bi\xE8re n\u2019existe pas ?"
+      value: "Laquelle de ces bi\xE8res n\u2019existe pas ?"
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: propositions.Array.data[0]
-      value: "La bi\xE8re officielle de la maison blanche"
+      value: "La bi\xE8re officielle de la Maison Blanche"
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
@@ -2694,23 +2689,23 @@ Prefab:
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: question
-      value: "Quelle activit\xE9 n\u2019est pas propos\xE9e par le mus\xE9e d\u2019histoire
-        naturelle de Londres ?"
+      value: "Laquelle de ces activit\xE9s n\u2019est pas propos\xE9e par le mus\xE9e
+        d\u2019histoire naturelle de Londres ?"
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: propositions.Array.data[0]
-      value: "Un marathon de films d\u2019horreur."
+      value: "Un marathon de films d\u2019horreur"
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: propositions.Array.data[1]
-      value: "Une salle de jeux vid\xE9os impliquant des dinosaures."
+      value: "Une salle de jeux vid\xE9os impliquant des dinosaures"
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: propositions.Array.data[2]
-      value: "Dormir sous le squelette d\u2019un diplodocus."
+      value: "Dormir sous le squelette d\u2019un diplodocus"
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
@@ -2866,18 +2861,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 55c1f72c6aecfc74d958b2f2bbae34fe, type: 3}
-    m_FontSize: 22
-    m_FontStyle: 0
+    m_FontSize: 0
+    m_FontStyle: 2
     m_BestFit: 0
-    m_MinSize: 3
-    m_MaxSize: 123
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 1
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 0.66
-  m_Text: Il y a vraiment des cons pour acheter ?
+    m_LineSpacing: 0.58
+  m_Text: "Il y a vraiment des pigeons pour acheter \xE7a ?"
 --- !u!222 &885708902
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3125,10 +3120,10 @@ MonoBehaviour:
   question: "Lequel de ces animaux n\u2019existe pas ?"
   nbProposition: 4
   propositions:
-  - "wombat, l\u2019animal aux caca carr\xE9es "
-  - le crabe yeti au pince poilue
-  - "La tortue \xE0 long cou, qui \u2026 a un long cou"
-  - "crapaud bleue qui s\xE9cr\xE8te un venin qui lui donne cette couleur"
+  - "Le wombat, l\u2019animal aux cacas carr\xE9s"
+  - "Le crabe y\xE9ti aux pinces poilues"
+  - "La tortue \xE0 long cou, qui\u2026 a un long cou"
+  - "Le crapaud bleu qui s\xE9cr\xE8te un venin qui lui donne sa couleur"
   "r\xE9ponse": 03000000
   prop: 0
 --- !u!1 &993233994
@@ -3251,7 +3246,7 @@ Prefab:
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: question
-      value: "Vrai ou faux : Il existe un mus\xE9e du pr\xE9servatif dans la ville
+      value: "Vrai ou Faux : Il existe un mus\xE9e du pr\xE9servatif dans la ville
         de Condom, en Belgique"
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
@@ -3613,11 +3608,10 @@ MonoBehaviour:
   question: "Quelle est la particularit\xE9 du tatou \xE0 9 bandes ?"
   nbProposition: 4
   propositions:
-  - "Fan des Dalton, il donne syst\xE9matiquement naissance \xE0 des quadrupl\xE9s."
-  - "Tr\xE8s sociable, il chasse sous terre, mais constamment en meute."
-  - "Amateur de basket, il peut parfois atteindre 2 m\xE8tres de longueur."
-  - "Il t\xE9l\xE9phone r\xE9guli\xE8rement \xE0 son cousin lointain, le renard \xE0
-    9 queues."
+  - "Il donne syst\xE9matiquement naissance \xE0 des quadrupl\xE9s"
+  - Il chasse sous terre, mais constamment en meute
+  - "Il peut parfois atteindre 2 m\xE8tres de longueur"
+  - "Il t\xE9l\xE9phone r\xE9guli\xE8rement au renard \xE0 9 queues"
   "r\xE9ponse": 00000000
   prop: 0
 --- !u!1 &1156253797
@@ -3652,7 +3646,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52.9, y: -102.2}
+  m_AnchoredPosition: {x: 60.32, y: -102.2}
   m_SizeDelta: {x: 298.2, y: 160.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1156253799
@@ -4132,8 +4126,8 @@ Prefab:
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: question
-      value: "Vrai ou faux : l\u2019ancien roi du N\xE9pal Dipendra n\u2019a \xE9t\xE9
-        roi pendant qu\u2019un mois, alors qu\u2019il \xE9tait dans le coma."
+      value: "Vrai ou Faux : l\u2019ancien roi du N\xE9pal Dipendra n'a \xE9t\xE9
+        roi pendant qu'un mois, alors qu\u2019il \xE9tait dans le coma."
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
@@ -4274,7 +4268,7 @@ Prefab:
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: question
-      value: Que peut on acheter sur amazon ?
+      value: Que peut-on acheter sur Amazon ?
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
@@ -4289,7 +4283,7 @@ Prefab:
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: propositions.Array.data[0]
-      value: "De v\xE9ritables griffe de tigre"
+      value: "De v\xE9ritables griffes de tigre"
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
@@ -4304,7 +4298,7 @@ Prefab:
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: propositions.Array.data[3]
-      value: "Un dipl\xF4me de Centralien de Nantes"
+      value: "Un dipl\xF4me de Centrale Nantes"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f3971a2b70303341a0654030e7106e0, type: 2}
@@ -4363,7 +4357,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.49
-  m_Text: Victoire
+  m_Text: Victoire !
 --- !u!222 &1242986463
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4450,18 +4444,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 55c1f72c6aecfc74d958b2f2bbae34fe, type: 3}
-    m_FontSize: 22
-    m_FontStyle: 0
+    m_FontSize: 0
+    m_FontStyle: 2
     m_BestFit: 0
-    m_MinSize: 3
-    m_MaxSize: 123
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 1
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 0.66
-  m_Text: Le client fut Roi
+    m_LineSpacing: 0.58
+  m_Text: Les Rois des Cons
 --- !u!222 &1246894292
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4625,16 +4619,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b51c9e945941c438de3c0ebef1ca4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  question: "Quelle situation a \xE9t\xE9 v\xE9cue par Paul Deschanel, Pr\xE9sident
-    de la France en 1920 ? "
+  question: "Quelle situation a \xE9t\xE9 v\xE9cue en 1920 par Paul Deschanel, alors
+    Pr\xE9sident de la France ? "
   nbProposition: 4
   propositions:
-  - "Il s\u2019est fait agress\xE9 \xE0 coups de harengs pendant le carnaval de Dunkerque"
-  - "Il s\u2019est retrouv\xE9 de nuit, en pyjama, au bord d\u2019une voie ferr\xE9e"
-  - "Il est tomb\xE9 dans un des escaliers de l\u2019Elys\xE9e \xE0 cause de son chien
-    \u201CRodolphe\u201D"
-  - "Il a subi une r\xE9volte des pourpoings mauves, parents spirituels des gilets
-    jaunes"
+  - "Agress\xE9 \xE0 coups de harengs"
+  - "En pyjama au bord d\u2019une voie ferr\xE9e"
+  - "Chute dans les escaliers \xE0 cause de Rodolphe"
+  - "R\xE9volte des Pourpoings Mauves"
   "r\xE9ponse": 01000000
   prop: 0
 --- !u!1 &1313877291
@@ -4693,18 +4685,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 55c1f72c6aecfc74d958b2f2bbae34fe, type: 3}
-    m_FontSize: 22
-    m_FontStyle: 0
+    m_FontSize: 0
+    m_FontStyle: 2
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 153
+    m_MaxSize: 300
     m_Alignment: 1
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 0.66
-  m_Text: Reponse 3
+    m_LineSpacing: 0.58
+  m_Text: Reponse 2
 --- !u!222 &1313877294
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4760,7 +4752,7 @@ Prefab:
         type: 2}
       propertyPath: question
       value: "Quel animal de la ferme est \xE0 l\u2019origine de la mort de Philippe
-        de France, fils de Louis VI le Gros?"
+        de France, fils de Louis VI le Gros ?"
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
@@ -4897,17 +4889,17 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 55c1f72c6aecfc74d958b2f2bbae34fe, type: 3}
-    m_FontSize: 22
-    m_FontStyle: 0
+    m_FontSize: 0
+    m_FontStyle: 2
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 153
+    m_MaxSize: 300
     m_Alignment: 1
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 0.66
+    m_LineSpacing: 0.58
   m_Text: Reponse 1
 --- !u!222 &1348333182
 CanvasRenderer:
@@ -4977,18 +4969,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 55c1f72c6aecfc74d958b2f2bbae34fe, type: 3}
-    m_FontSize: 22
-    m_FontStyle: 0
+    m_FontSize: 0
+    m_FontStyle: 2
     m_BestFit: 0
-    m_MinSize: 3
-    m_MaxSize: 123
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 1
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 0.66
-  m_Text: "A mus\xE9e vous"
+    m_LineSpacing: 0.58
+  m_Text: "A'mus\xE9e-vous"
 --- !u!222 &1426862341
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5047,8 +5039,8 @@ Prefab:
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: question
-      value: "Quel objet lanc\xE9 sur Pyrrhus 1er, un des plus grands g\xE9n\xE9raux
-        de l\u2019Antiquit\xE9 Grecque, a provoqu\xE9 sa mort?"
+      value: "Lequel de ces objets, lanc\xE9 sur Pyrrhus 1er, un des plus grands g\xE9n\xE9raux
+        de l\u2019Antiquit\xE9 Grecque, a caus\xE9 sa mort ?"
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
@@ -5058,12 +5050,12 @@ Prefab:
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: propositions.Array.data[1]
-      value: "Une tuile, lanc\xE9e par une grand-m\xE8re de sa fen\xEAtre,"
+      value: "Une tuile, lanc\xE9e par une grand-m\xE8re de sa fen\xEAtre"
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: propositions.Array.data[2]
-      value: "Une pierre, lanc\xE9e par un mari cocu,"
+      value: "Une pierre, lanc\xE9e par un mari cocu"
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
@@ -5752,13 +5744,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   question: "En 1386, un proc\xE8s pour le meurtre d\u2019un nourrisson se termine
-    sur un verdict peu commun \u2026 lequel ? "
+    sur un verdict peu commun\u2026 Lequel ? "
   nbProposition: 4
   propositions:
   - "L'assassin a \xE9t\xE9 condamn\xE9 \xE0 refaire un enfant \xE0 la m\xE8re du
-    d\xE9funt "
-  - "Le meurtrier \xE9tait le roi Charle de France, il a \xE9t\xE9 acquitt\xE9 "
-  - "une truie tra\xEEn\xE9e en place publique et pendue"
+    d\xE9funt"
+  - "Le meurtrier \xE9tait le roi Charles de France, il a \xE9t\xE9 acquitt\xE9"
+  - "Une truie a \xE9t\xE9 tra\xEEn\xE9e en place publique et pendue"
   - "L\u2019assassin a \xE9t\xE9 acquitt\xE9 en invoquant la l\xE9gitime d\xE9fense"
   "r\xE9ponse": 02000000
   prop: 0
@@ -5843,14 +5835,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b51c9e945941c438de3c0ebef1ca4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  question: "Parmi toutes ses propositions, lequel fait partie des gadgets auparavant
-    utilis\xE9s par le MI6 ?"
+  question: "Le quel de ces gadgets \xE9tait utilis\xE9 auparavant par le MI6 ?"
   nbProposition: 4
   propositions:
-  - "Un parapluie, incluant un laser tr\xE8s puissant."
-  - "Le sperme, en tant qu\u2019encre invisible."
-  - Une moustache, en guise de micro.
-  - "Un chapeau faisant appara\xEEtre des papillons, juste pour le style."
+  - "Un parapluie, incluant un laser tr\xE8s puissant"
+  - "Le sperme, en tant qu\u2019encre invisible"
+  - Une moustache, en guise de micro
+  - "Un chapeau faisant appara\xEEtre des papillons"
   "r\xE9ponse": 01000000
   prop: 0
 --- !u!1 &1690957745
@@ -5934,12 +5925,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b51c9e945941c438de3c0ebef1ca4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  question: "Quel r\xE9seau social existe vraiment ?"
+  question: "Lequel de ces r\xE9seaux sociaux existe ?"
   nbProposition: 4
   propositions:
-  - "Avoid human, le r\xE9seau social pour agoraphobe"
+  - "Avoid Humans, le r\xE9seau social pour agoraphobes"
   - "Cochonnetwork, le site des accros \xE0 la p\xE9tanque"
-  - "R\xE9volution jaune, le r\xE9seau social militant pour gilet jaunes"
+  - "R\xE9volution Jaune, le r\xE9seau social militant pour gilets jaunes"
   - Adopteuncheik, pour les personnes en recherche d'exotisme
   "r\xE9ponse": 00000000
   prop: 0
@@ -5994,12 +5985,12 @@ Prefab:
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: question
-      value: "Quelle est la particularit\xE9 de Shapur II, ancien roi Perse?"
+      value: "Quelle est la particularit\xE9 de Shapur II, ancien roi Perse ?"
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: propositions.Array.data[0]
-      value: " son cheval lui-m\xEAme faisait partie de son commandement militaire"
+      value: "Son cheval lui-m\xEAme faisait partie de son commandement militaire"
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
@@ -6015,7 +6006,7 @@ Prefab:
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: propositions.Array.data[3]
-      value: " il n\u2019offrait que des ananas en cadeau lors de visites officielles"
+      value: "Il n\u2019offrait que des ananas en cadeau lors de visites diplomatiques"
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
@@ -6156,12 +6147,12 @@ Prefab:
     - target: {fileID: 114947334780455580, guid: ac567434858310641a7ff2c3ed70142e,
         type: 2}
       propertyPath: Proposition1
-      value: "No\xE9mie"
+      value: "No\xE9mie,"
       objectReference: {fileID: 0}
     - target: {fileID: 114947334780455580, guid: ac567434858310641a7ff2c3ed70142e,
         type: 2}
       propertyPath: Proposition2
-      value: un Zombie
+      value: un zombie,
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac567434858310641a7ff2c3ed70142e, type: 2}
@@ -6329,7 +6320,7 @@ Prefab:
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: propositions.Array.data[1]
-      value: En mangeant des melons
+      value: "En mangeant des melons, comme son p\xE8re"
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
@@ -6543,17 +6534,17 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 55c1f72c6aecfc74d958b2f2bbae34fe, type: 3}
-    m_FontSize: 22
-    m_FontStyle: 0
+    m_FontSize: 20
+    m_FontStyle: 2
     m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 153
+    m_MinSize: 2
+    m_MaxSize: 300
     m_Alignment: 1
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 0.66
+    m_LineSpacing: 0.49
   m_Text: 'La question ? '
 --- !u!222 &1880902064
 CanvasRenderer:
@@ -6753,7 +6744,7 @@ Prefab:
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: question
-      value: "Quelle est la particularit\xE9 de l\u2019agence de voyage Japonaise
+      value: "Quelle est la particularit\xE9 de l\u2019agence de voyage japonaise
         \u201CUnagi Travel\u201D ?"
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
@@ -6870,15 +6861,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b51c9e945941c438de3c0ebef1ca4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  question: "Quelle situation a \xE9t\xE9 v\xE9cue par le cycliste Abdel-Kader Zaaf
-    ?"
+  question: "Laquelle de ces situations a \xE9t\xE9 v\xE9cue par le cycliste Abdel-Kader
+    Zaaf ?"
   nbProposition: 4
   propositions:
-  - "Il a \xE9t\xE9 pris en flagrant d\xE9lit de triche en s\u2019agrippant \xE0 une
-    voiture de ravitaillement sur 5 kilom\xE8tres."
-  - "Il a fini une course plus de 20 heures apr\xE8s l\u2019arriv\xE9e du gagnant."
-  - "D\xE9shydrat\xE9, il but du vin et repartit dans une course, mais en sens inverse."
-  - "Il a d\xFB faire une course en rempla\xE7ant ses chaussures par des babouches"
+  - "Il a trich\xE9 en s'aggripant \xE0 une voiture"
+  - "Il est arriv\xE9 plus de 20 heures apr\xE8s les autres"
+  - Ivre, il reprit sa course mais en sens inverse
+  - "Il a d\xFB faire une course en babouches"
   "r\xE9ponse": 02000000
   prop: 0
 --- !u!1 &1975934447
@@ -7120,7 +7110,7 @@ Prefab:
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: question
-      value: "Quel mus\xE9e n\u2019existe pas ?"
+      value: "Lequel de ces mus\xE9es n\u2019existe pas ?"
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
@@ -7130,7 +7120,7 @@ Prefab:
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
       propertyPath: propositions.Array.data[2]
-      value: "Le mus\xE9e de la sali\xE8re et de la poivri\xE8re"
+      value: "Le mus\xE9e de la quiche lorraine"
       objectReference: {fileID: 0}
     - target: {fileID: 114029855380366764, guid: 7f3971a2b70303341a0654030e7106e0,
         type: 2}
@@ -7187,7 +7177,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52.9, y: -65.1}
+  m_AnchoredPosition: {x: 60.32, y: -65.1}
   m_SizeDelta: {x: 298.2, y: 160.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2044427935
@@ -7511,17 +7501,17 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 55c1f72c6aecfc74d958b2f2bbae34fe, type: 3}
-    m_FontSize: 22
-    m_FontStyle: 0
+    m_FontSize: 0
+    m_FontStyle: 2
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 153
+    m_MaxSize: 300
     m_Alignment: 1
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 0.66
+    m_LineSpacing: 0.58
   m_Text: Reponse 2
 --- !u!222 &2126471326
 CanvasRenderer:
@@ -7638,7 +7628,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 521.7
+  m_ReferencePixelsPerUnit: 88.18
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
@@ -7646,7 +7636,7 @@ MonoBehaviour:
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 4.84
+  m_DynamicPixelsPerUnit: 45.9
 --- !u!223 &2139553171
 Canvas:
   m_ObjectHideFlags: 0
